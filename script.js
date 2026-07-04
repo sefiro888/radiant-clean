@@ -100,7 +100,7 @@ const indexTranslations = [
   [".founder h2", "Soy Georgina. Trabajo cerca, con criterio y mucho cariño por los detalles.", "I'm Georgina. I work closely, with judgement and real care for the details."],
   [".founder-copy > p:nth-of-type(2)", "Llevo años cuidando viviendas vacacionales y propiedades que necesitan estar siempre listas. Mi forma de trabajar se basa en la responsabilidad, la organización y la atención al detalle, y en estar yo presente cuando hace falta.", "I have spent years caring for holiday homes and properties that need to be always ready. My way of working is built on responsibility, organisation, attention to detail, and being there myself when it matters."],
   [".founder-copy > p:nth-of-type(3)", "Superviso cada proceso de cerca y mantengo un estándar claro: que la persona que llega a la vivienda — propietario, huésped o quien venga a verla — sienta desde el primer paso que hay alguien detrás cuidándola.", "I supervise every process closely and keep a clear standard: that whoever walks into the home — owner, guest or visitor — feels from the very first step that someone is looking after it."],
-  [".founder-note", "La idea es sencilla: que puedas dejarme las llaves con confianza y saber que estoy mirando la vivienda con criterio, calma y cariño por los detalles.", "The idea is simple: you hand me the keys with confidence and know I'm looking after the home with judgement, calm and care for the details."],
+  [".founder-note", "La idea es sencilla: que puedas dejarme las llaves con confianza y saber que estoy mirando la vivienda con cabeza, calma y atención de verdad.", "The idea is simple: you hand me the keys with confidence and know I'm looking after the home with judgement, calm and real attention."],
   [".founder-marks span:nth-child(1)", "+16 años de experiencia", "+16 years of experience"],
   [".founder-marks span:nth-child(2)", "Málaga y alrededores", "Malaga and nearby areas"],
   [".founder-marks span:nth-child(3)", "Equipo formado por mí", "Team trained by me"],
@@ -205,8 +205,8 @@ const indexTranslations = [
   [".training .section-kicker", "Formación Radiant", "Radiant Training"],
   [".training-copy .script-mark", "para equipos y empresas", "for teams and companies"],
   [".training h2", "Enseño la forma de trabajar que en este sector nadie te enseña.", "I teach the way of working that nobody in this sector teaches you."],
-  [".training-copy > p:nth-of-type(1)", "El gran problema de la limpieza profesional no son las manos: es la falta de formación. Equipos sin checklist, sin briefing, sin criterio para revisar lo importante.", "The big problem in professional cleaning is not the hands: it is the lack of training. Teams with no checklist, no briefing, no judgement to review what matters."],
-  [".training-copy > p:nth-of-type(2)", "Después de años montando sistemas propios, formo a empresas de limpieza, equipos internos de gestores y a quien quiere arrancar su proyecto con cabeza. Te enseño mi metodología, te dejo plantillas reales y te acompaño hasta que el equipo entrega solo, sin que tengas que estar encima.", "After years building my own systems, I train cleaning companies, in-house manager teams and anyone who wants to start their project the right way. I share my methodology, give you real templates and stay close until the team delivers on its own."],
+  [".training-copy > p:nth-of-type(2)", "El gran problema de la limpieza profesional no son las manos: es la falta de formación. Equipos sin checklist, sin briefing, sin criterio para revisar lo importante.", "The big problem in professional cleaning is not the hands: it is the lack of training. Teams with no checklist, no briefing, no judgement to review what matters."],
+  [".training-copy > p:nth-of-type(3)", "Después de años montando sistemas propios, formo a empresas de limpieza, equipos internos de gestores y a quien quiere arrancar su proyecto con cabeza. Te enseño mi metodología, te dejo plantillas reales y te acompaño hasta que el equipo entrega solo, sin que tengas que estar encima.", "After years building my own systems, I train cleaning companies, in-house manager teams and anyone who wants to start their project the right way. I share my methodology, give you real templates and stay close until the team delivers on its own."],
   [".training-bullets li:nth-child(1)", "Para empresas que quieren elevar su estándar.", "For companies that want to raise their standard."],
   [".training-bullets li:nth-child(2)", "Para gestores que necesitan ordenar a su equipo de limpieza.", "For managers who need to organise their cleaning team."],
   [".training-bullets li:nth-child(3)", "Para quien quiere arrancar su propio negocio del sector.", "For people who want to start their own business in the sector."],
@@ -297,8 +297,8 @@ const formacionTranslations = [
   [".formacion-modules li:nth-child(5) p", "Sigo cerca durante las primeras semanas para que el sistema se quede contigo y empiece a rodar solo.", "I stay close during the first weeks so the system truly sticks and starts running on its own."],
   [".formacion-method .section-kicker", "Mi metodología", "My methodology"],
   [".formacion-method h2", "Lo difícil no es limpiar. Es enseñar a mirar.", "The hard part is not cleaning. It is teaching how to look."],
-  [".formacion-method-copy p:nth-of-type(1)", "He construido este sistema a base de años en propiedades reales: lo que funciona, lo que no, y los detalles que un equipo aprende cuando alguien se sienta a explicarlo con calma.", "I built this system over years in real properties: what works, what doesn't, and the details a team learns when someone sits down to explain it calmly."],
-  [".formacion-method-copy p:nth-of-type(2)", "Te lo paso ordenado. Cada módulo tiene su plantilla, su checklist y su guion de briefing. Tu trabajo después es supervisar, no improvisar.", "I hand it over in order. Every module has its template, its checklist and its briefing script. Your job after is to supervise, not improvise."],
+  [".formacion-method-copy p:nth-of-type(2)", "He construido este sistema a base de años en propiedades reales: lo que funciona, lo que no, y los detalles que un equipo aprende cuando alguien se sienta a explicarlo con calma.", "I built this system over years in real properties: what works, what doesn't, and the details a team learns when someone sits down to explain it calmly."],
+  [".formacion-method-copy p:nth-of-type(3)", "Te lo paso ordenado. Cada módulo tiene su plantilla, su checklist y su guion de briefing. Tu trabajo después es supervisar, no improvisar.", "I hand it over in order. Every module has its template, its checklist and its briefing script. Your job after is to supervise, not improvise."],
   [".formacion-method-copy .text-link", "Quiero conocer la metodología en una llamada", "I want to hear about the methodology on a call"],
   [".formacion-quote blockquote", "“La formación con Georgina nos cambió el chip. Antes corregíamos a diario, ahora el equipo entrega con criterio y yo recupero tiempo para hacer crecer el negocio.”", "“Georgina's training changed our mindset. We used to correct every day; now the team delivers with judgement and I get my time back to grow the business.”"],
   [".formacion-quote figcaption strong", "Lucía", "Lucía"],
@@ -349,8 +349,8 @@ const servicePageTranslations = {
     [".detail-proof article:nth-child(3) p", "La vivienda mantiene el mismo nivel incluso en semanas de alta rotación, festivos o cambios rápidos.", "The home keeps the same level even during high-turnover weeks, holidays or fast turnovers."],
     [".detail-copy .section-kicker", "Para propietarios y gestores", "For owners and managers"],
     [".detail-copy h2", "Delegar la limpieza sin perder el control del estado de la vivienda.", "Delegate the cleaning without losing track of how the home is doing."],
-    [".detail-copy p:nth-of-type(1)", "No solo entrego una vivienda limpia: te aviso si algo se está estropeando, si un textil necesita relevo, si un huésped ha dejado una incidencia. La idea es que el inmueble dure más y se vea mejor cuanto más tiempo trabajemos juntas.", "I don't just hand over a clean home: I let you know if something is wearing out, if a textile needs replacing, or if a guest left an issue. The idea is that the property lasts longer and looks better the longer we work together."],
-    [".detail-copy p:nth-of-type(2)", "Si gestionas varias propiedades, organizo todo el calendario contigo y aseguro que cada entrada llegue en su hora, sin sustos de última hora.", "If you manage several properties, I organise the whole calendar with you and make sure every handover lands on time, no last-minute surprises."],
+    [".detail-copy p:nth-of-type(2)", "No solo entrego una vivienda limpia: te aviso si algo se está estropeando, si un textil necesita relevo, si un huésped ha dejado una incidencia. La idea es que el inmueble dure más y se vea mejor cuanto más tiempo trabajemos juntas.", "I don't just hand over a clean home: I let you know if something is wearing out, if a textile needs replacing, or if a guest left an issue. The idea is that the property lasts longer and looks better the longer we work together."],
+    [".detail-copy p:nth-of-type(3)", "Si gestionas varias propiedades, organizo todo el calendario contigo y aseguro que cada entrada llegue en su hora, sin sustos de última hora.", "If you manage several properties, I organise the whole calendar with you and make sure every handover lands on time, no last-minute surprises."],
     [".detail-steps li:nth-child(1) strong", "Planificación de entradas", "Arrival planning"],
     [".detail-steps li:nth-child(1) span", "Organización según calendario, rotación y prioridades de cada vivienda.", "Organisation by calendar, turnover and each home's priorities."],
     [".detail-steps li:nth-child(2) strong", "Limpieza completa", "Complete cleaning"],
@@ -358,14 +358,14 @@ const servicePageTranslations = {
     [".detail-steps li:nth-child(3) strong", "Revisión final", "Final review"],
     [".detail-steps li:nth-child(3) span", "Control de presentación antes de entregar la vivienda.", "Presentation check before handing over the home."],
     [".detail-check .section-kicker", "Checklist Radiant", "Radiant checklist"],
-    [".detail-check h2", "Detalles que elevan la valoración.", "Details that raise the rating."],
-    [".detail-check li:nth-child(1)", "Presentación de dormitorios y zonas de descanso.", "Presentation of bedrooms and rest areas."],
-    [".detail-check li:nth-child(2)", "Cocina limpia, ordenada y lista para uso.", "Kitchen clean, ordered and ready to use."],
-    [".detail-check li:nth-child(3)", "Baños revisados con atención a superficies y acabados.", "Bathrooms checked with attention to surfaces and finishes."],
-    [".detail-check li:nth-child(4)", "Terrazas y espacios exteriores preparados.", "Terraces and outdoor spaces prepared."],
-    [".detail-check li:nth-child(5)", "Aviso de incidencias visibles para actuar a tiempo.", "Visible issues reported so action can be taken in time."],
+    [".detail-check h2", "Los detalles que elevan la valoración.", "The details that raise the rating."],
+    [".detail-check li:nth-child(1)", "Presentación cuidada de dormitorios y zonas de descanso.", "Careful presentation of bedrooms and rest areas."],
+    [".detail-check li:nth-child(2)", "Cocina limpia, ordenada y lista para usar nada más entrar.", "Kitchen clean, ordered and ready to use from the moment you walk in."],
+    [".detail-check li:nth-child(3)", "Baños revisados con atención a superficies, juntas y acabados.", "Bathrooms checked with attention to surfaces, joints and finishes."],
+    [".detail-check li:nth-child(4)", "Terrazas y espacios exteriores preparados para disfrutar.", "Terraces and outdoor spaces ready to enjoy."],
+    [".detail-check li:nth-child(5)", "Aviso temprano de cualquier incidencia para actuar a tiempo.", "Early heads-up on any issue so you can act on time."],
     [".detail-cta h2", "Convierte cada entrada en una experiencia cuidada.", "Turn every arrival into a cared-for experience."],
-    [".detail-cta .btn", "Hablar por WhatsApp", "Talk on WhatsApp"]
+    [".detail-cta .btn", "Hablar con Georgina por WhatsApp", "Talk to Georgina on WhatsApp"]
   ],
   "post-obra.html": [
     [".detail-back", "Volver a servicios", "Back to services"],
@@ -394,8 +394,8 @@ const servicePageTranslations = {
     [".detail-proof article:nth-child(3) p", "Espacio preparado para enseñar, fotografiar, vender, alquilar o utilizar al día siguiente.", "Space ready to show, photograph, sell, rent or use the very next day."],
     [".detail-copy .section-kicker", "Para constructoras, reformistas y propietarios", "For builders, refurbishers and owners"],
     [".detail-copy h2", "La última fase de la obra también se nota al entrar.", "The final stage of the build is also felt when you walk in."],
-    [".detail-copy p:nth-of-type(1)", "La calidad percibida de una reforma se juega en los días posteriores a la entrega. Cristales con cemento, polvo en los rodapiés, marcas en grifos o juntas mal limpiadas hacen parecer que la obra no se cerró bien, aunque esté perfectamente acabada.", "How a renovation is perceived plays out in the days after handover. Glass with cement, dust on skirtings, marks on taps or poorly cleaned joints make it look like the works weren't properly closed, even if they're perfectly finished."],
-    [".detail-copy p:nth-of-type(2)", "Trabajo en coordinación con el equipo de obra para entrar en el momento adecuado y dejar el inmueble como debería verse el día de la entrega.", "I coordinate with the build team to step in at the right moment and leave the property looking the way it should on handover day."],
+    [".detail-copy p:nth-of-type(2)", "La calidad percibida de una reforma se juega en los días posteriores a la entrega. Cristales con cemento, polvo en los rodapiés, marcas en grifos o juntas mal limpiadas hacen parecer que la obra no se cerró bien, aunque esté perfectamente acabada.", "How a renovation is perceived plays out in the days after handover. Glass with cement, dust on skirtings, marks on taps or poorly cleaned joints make it look like the works weren't properly closed, even if they're perfectly finished."],
+    [".detail-copy p:nth-of-type(3)", "Trabajo en coordinación con el equipo de obra para entrar en el momento adecuado y dejar el inmueble como debería verse el día de la entrega.", "I coordinate with the build team to step in at the right moment and leave the property looking the way it should on handover day."],
     [".detail-steps li:nth-child(1) strong", "Evaluación del inmueble", "Property assessment"],
     [".detail-steps li:nth-child(1) span", "Estado, polvo, residuos, cristales, suelos y superficies.", "Condition, dust, residue, glass, floors and surfaces."],
     [".detail-steps li:nth-child(2) strong", "Plan de intervención", "Intervention plan"],
@@ -404,32 +404,43 @@ const servicePageTranslations = {
     [".detail-steps li:nth-child(3) span", "Control final para entregar el espacio preparado.", "Final check to hand over the prepared space."],
     [".detail-check .section-kicker", "Checklist Radiant", "Radiant checklist"],
     [".detail-check h2", "De obra terminada a espacio presentable.", "From finished works to a presentable space."],
-    [".detail-check li:nth-child(1)", "Retirada de polvo fino en superficies y rincones.", "Removal of fine dust on surfaces and corners."],
-    [".detail-check li:nth-child(2)", "Atención a suelos, ventanas, marcos y acabados.", "Attention to floors, windows, frames and finishes."],
-    [".detail-check li:nth-child(3)", "Revisión de baños, cocina y zonas de paso.", "Review of bathrooms, kitchen and passage areas."],
-    [".detail-check li:nth-child(4)", "Limpieza final orientada a uso, venta o alquiler.", "Final cleaning focused on use, sale or rental."],
+    [".detail-check li:nth-child(1)", "Retirada de polvo fino en superficies, rincones y zonas altas.", "Fine dust removal on surfaces, corners and high areas."],
+    [".detail-check li:nth-child(2)", "Atención a suelos, ventanas, marcos y acabados delicados.", "Attention to floors, windows, frames and delicate finishes."],
+    [".detail-check li:nth-child(3)", "Revisión a fondo de baños, cocina y zonas de paso.", "Deep check of bathrooms, kitchen and passage areas."],
+    [".detail-check li:nth-child(4)", "Limpieza final orientada a uso, venta, alquiler o estreno.", "Final clean aimed at use, sale, rental or moving in."],
     [".detail-check li:nth-child(5)", "Trabajo planificado para reducir tiempos sin perder calidad.", "Planned work to reduce time without losing quality."],
     [".detail-cta h2", "Deja el inmueble listo para enseñar con seguridad.", "Leave the property ready to show with confidence."],
-    [".detail-cta .btn", "Hablar por WhatsApp", "Talk on WhatsApp"]
+    [".detail-cta .btn", "Hablar con Georgina por WhatsApp", "Talk to Georgina on WhatsApp"]
   ],
   "venta-alquiler.html": [
     [".detail-back", "Volver a servicios", "Back to services"],
     [".detail-hero .eyebrow", "Radiant Clean · Servicio especializado", "Radiant Clean · Specialist service"],
-    [".detail-hero h1", "Prepara la vivienda para que apetezca quedarse.", "Prepare the home so people want to stay."],
-    [".detail-hero p:not(.eyebrow)", "Limpieza profunda, orden visual y revisión completa para que una vivienda transmita cuidado, confianza y calidez desde la primera visita.", "Deep cleaning, visual order and complete review so a home communicates care, trust and warmth from the first viewing."],
-    [".detail-hero .btn-primary", "Solicitar este servicio", "Request this service"],
+    [".detail-hero h1", "Una vivienda preparada se vende y alquila antes.", "A prepared home sells and rents faster."],
+    [".detail-hero p:not(.eyebrow)", "Preparo la vivienda para que entre por los ojos desde la primera foto y desde la primera visita. Limpieza profunda, orden visual y revisión completa para que cuando alguien la vea, la sienta cuidada antes incluso de fijarse en los detalles.", "I prepare the home so it draws people in from the very first photo and the very first viewing. Deep cleaning, visual order and a full review so anyone who sees it feels it's cared for, even before noticing the details."],
+    [".detail-hero .btn-primary", "Pedir presupuesto", "Request a quote"],
     [".detail-hero .btn-secondary", "Ver dossier", "View dossier"],
     [".detail-hero-card span", "Objetivo", "Goal"],
-    [".detail-hero-card strong", "Que la vivienda se vea cuidada, luminosa y fácil de imaginar como hogar.", "Make the home feel cared for, bright and easy to imagine as a home."],
+    [".detail-hero-card strong", "Que la vivienda se vea cuidada, luminosa y fácil de imaginar como hogar.", "That the home feels cared for, bright and easy to picture as a home."],
+    [".detail-highlights span:nth-child(1)", "Antes de fotografías", "Before photography"],
+    [".detail-highlights span:nth-child(2)", "Antes de visitas", "Before viewings"],
+    [".detail-highlights span:nth-child(3)", "Entrega a inquilino", "Tenant handover"],
+    [".detail-highlights span:nth-child(4)", "Inmobiliarias y propietarios", "Agencies and owners"],
+    [".detail-includes .section-kicker", "Qué incluye el servicio", "What the service includes"],
+    [".detail-includes h2", "Lo que se prepara para que entre por los ojos.", "What I prepare so it pulls people in."],
+    [".detail-includes-copy p", "No es una limpieza más: es una preparación pensada para ser vista. Cada decisión tiene un porqué visual: que la cocina parezca espaciosa, que el baño parezca nuevo, que el salón invite a quedarse.", "It's not just another clean: it's a preparation designed to be seen. Every choice has a visual reason: making the kitchen feel spacious, the bathroom feel new, the living room invite you in."],
+    [".detail-includes-copy .text-link", "Pedir propuesta para tu vivienda", "Request a proposal for your home"],
+    [".detail-related-heading h2", "También te puede interesar", "You may also like"],
+    [".detail-related-heading p", "Si gestionas varias propiedades o vienes de una reforma, hay más servicios que pueden encajar.", "If you manage several properties or are coming out of a renovation, there are more services that may fit."],
     [".detail-proof article:nth-child(1) strong", "Primera impresión", "First impression"],
-    [".detail-proof article:nth-child(1) p", "Espacios limpios, ordenados y visualmente preparados para visitas.", "Clean, ordered spaces visually prepared for viewings."],
+    [".detail-proof article:nth-child(1) p", "Espacios limpios, ordenados y visualmente preparados para fotos y visitas.", "Clean, ordered spaces visually prepared for photos and viewings."],
     [".detail-proof article:nth-child(2) strong", "Limpieza profunda", "Deep cleaning"],
-    [".detail-proof article:nth-child(2) p", "Trabajo detallado en estancias, baños, cocina, textiles y superficies.", "Detailed work in rooms, bathrooms, kitchen, textiles and surfaces."],
+    [".detail-proof article:nth-child(2) p", "Trabajo detallado en estancias, cocina, baños, textiles y superficies sensibles.", "Detailed work in rooms, kitchen, bathrooms, textiles and sensitive surfaces."],
     [".detail-proof article:nth-child(3) strong", "Agilidad comercial", "Commercial agility"],
-    [".detail-proof article:nth-child(3) p", "Una vivienda preparada facilita visitas, fotos, alquileres y ventas.", "A prepared home makes viewings, photos, rentals and sales easier."],
-    [".detail-copy .section-kicker", "Para inmobiliarias y propietarios", "For real estate agencies and owners"],
-    [".detail-copy h2", "Una vivienda cuidada se recuerda mejor porque se siente mejor.", "A cared-for home is remembered better because it feels better."],
-    [".detail-copy p:not(.section-kicker)", "Radiant Clean prepara cada espacio para que transmita orden y calma desde el primer momento. Es una puesta a punto pensada para fotos, visitas o entrada de nuevos inquilinos.", "Radiant Clean prepares each space so it communicates order and calm from the first moment. It is a preparation service designed for photos, viewings or new tenants arriving."],
+    [".detail-proof article:nth-child(3) p", "Una vivienda preparada acorta plazos: se enseña antes, gusta antes y se decide antes.", "A prepared home shortens timelines: it shows sooner, appeals sooner and gets a decision sooner."],
+    [".detail-copy .section-kicker", "Para inmobiliarias y propietarios", "For agencies and owners"],
+    [".detail-copy h2", "Una vivienda cuidada se entiende mejor, se visita mejor y se recuerda mejor.", "A cared-for home is understood better, visited better and remembered better."],
+    [".detail-copy p:nth-of-type(2)", "La mayoría de visitas se deciden en los primeros 30 segundos. En esos 30 segundos importa más cómo se siente el espacio que su tamaño o sus prestaciones. Por eso preparar la vivienda no es un lujo: es comercial.", "Most viewings are decided in the first 30 seconds. In those 30 seconds, how the space feels matters more than its size or features. That's why preparing the home isn't a luxury: it's commercial."],
+    [".detail-copy p:nth-of-type(3)", "Trabajo con propietarios particulares y con inmobiliarias que quieren entregar fotos y visitas con la mejor versión posible de cada inmueble.", "I work with private owners and agencies who want to deliver photos and viewings with the best possible version of each property."],
     [".detail-steps li:nth-child(1) strong", "Revisión completa", "Complete review"],
     [".detail-steps li:nth-child(1) span", "Estado general, puntos visibles y detalles que afectan a la visita.", "General condition, visible points and details that affect the viewing."],
     [".detail-steps li:nth-child(2) strong", "Puesta a punto", "Preparation"],
@@ -442,9 +453,9 @@ const servicePageTranslations = {
     [".detail-check li:nth-child(2)", "Revisión de cocina, baños y zonas de paso.", "Review of kitchen, bathrooms and passage areas."],
     [".detail-check li:nth-child(3)", "Presentación de salón, dormitorios y terraza.", "Presentation of living room, bedrooms and terrace."],
     [".detail-check li:nth-child(4)", "Cuidado de superficies, acabados y detalles finales.", "Care for surfaces, finishes and final details."],
-    [".detail-check li:nth-child(5)", "Preparación para visitas, fotos, venta o alquiler.", "Preparation for viewings, photos, sale or rental."],
-    [".detail-cta h2", "Haz que la vivienda entre por los ojos desde la primera visita.", "Make the home stand out from the first viewing."],
-    [".detail-cta .btn", "Hablar por WhatsApp", "Talk on WhatsApp"]
+    [".detail-check li:nth-child(5)", "Preparación específica para fotos profesionales, visitas o entrega.", "Targeted preparation for professional photos, viewings or handover."],
+    [".detail-cta h2", "Haz que la vivienda entre por los ojos desde la primera visita.", "Make the home stand out from the very first viewing."],
+    [".detail-cta .btn", "Hablar con Georgina por WhatsApp", "Talk to Georgina on WhatsApp"]
   ]
 };
 
@@ -516,6 +527,41 @@ function storeLanguage(lang) {
   }
 }
 
+function wrapGeorgina(root) {
+  if (!root) return;
+  const skip = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION"]);
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const parent = node.parentNode;
+      if (!parent || skip.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+      if (parent.closest && parent.closest(".name-georgina")) return NodeFilter.FILTER_REJECT;
+      if (!/\bGeorgina\b/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+
+  const nodes = [];
+  let current;
+  while ((current = walker.nextNode())) nodes.push(current);
+
+  nodes.forEach((textNode) => {
+    const parts = textNode.nodeValue.split(/(\bGeorgina\b)/g);
+    if (parts.length <= 1) return;
+    const frag = document.createDocumentFragment();
+    parts.forEach((part) => {
+      if (part === "Georgina") {
+        const span = document.createElement("span");
+        span.className = "name-georgina";
+        span.textContent = "Georgina";
+        frag.appendChild(span);
+      } else if (part) {
+        frag.appendChild(document.createTextNode(part));
+      }
+    });
+    textNode.parentNode.replaceChild(frag, textNode);
+  });
+}
+
 function applyLanguage(language) {
   const lang = language === "en" ? "en" : "es";
   const pageKey = currentPageKey();
@@ -534,6 +580,8 @@ function applyLanguage(language) {
   leadingTextTranslations.forEach(([selector, es, en]) => translateLeadingText(selector, es, en, lang));
   attributeTranslations.forEach(([selector, attr, es, en]) => translateAttribute(selector, attr, es, en, lang));
 
+  wrapGeorgina(document.body);
+
   storeLanguage(lang);
 }
 
@@ -542,6 +590,80 @@ langButtons.forEach((button) => {
 });
 
 applyLanguage(getStoredLanguage() || "es");
+
+(function initBackToTop() {
+  const btn = document.createElement("button");
+  btn.className = "back-to-top";
+  btn.type = "button";
+  btn.setAttribute("aria-label", "Volver arriba");
+  btn.innerHTML = '<span aria-hidden="true">↑</span>';
+  document.body.appendChild(btn);
+
+  const onScroll = () => {
+    btn.classList.toggle("is-visible", window.scrollY > 480);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  onScroll();
+})();
+
+(function initCookieBanner() {
+  const STORAGE_KEY = "radiant-cookies-v1";
+  let stored = null;
+  try {
+    stored = localStorage.getItem(STORAGE_KEY);
+  } catch (error) {
+    // Local storage may not be available; default to showing banner once per session.
+  }
+  if (stored === "accepted" || stored === "rejected") return;
+
+  const isEnglish = document.documentElement.lang === "en";
+
+  const banner = document.createElement("div");
+  banner.className = "cookie-banner";
+  banner.setAttribute("role", "dialog");
+  banner.setAttribute("aria-live", "polite");
+  banner.setAttribute("aria-label", isEnglish ? "Cookie notice" : "Aviso de cookies");
+
+  const labelStrong = isEnglish ? "Cookies" : "Cookies";
+  const labelText = isEnglish
+    ? 'This site uses essential cookies to work properly. You can read our <a href="cookies.html">cookies policy</a> and <a href="privacidad.html">privacy policy</a>.'
+    : 'Esta web utiliza cookies técnicas necesarias para funcionar. Puedes consultar la <a href="cookies.html">política de cookies</a> y la <a href="privacidad.html">política de privacidad</a>.';
+  const acceptLabel = isEnglish ? "Accept" : "Aceptar";
+  const rejectLabel = isEnglish ? "Reject" : "Rechazar";
+
+  banner.innerHTML =
+    '<div class="cookie-banner-inner">' +
+    '<div class="cookie-banner-text">' +
+    '<strong>' + labelStrong + '</strong>' +
+    '<p>' + labelText + '</p>' +
+    '</div>' +
+    '<div class="cookie-banner-actions">' +
+    '<button class="btn btn-primary" type="button" data-cookie-accept>' + acceptLabel + '</button>' +
+    '<button class="btn btn-ghost" type="button" data-cookie-reject>' + rejectLabel + '</button>' +
+    '</div>' +
+    '</div>';
+
+  document.body.appendChild(banner);
+
+  const close = (decision) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, decision);
+    } catch (error) {
+      // Ignore storage failures.
+    }
+    banner.classList.remove("is-visible");
+    banner.classList.add("is-leaving");
+    window.setTimeout(() => banner.remove(), 320);
+  };
+
+  banner.querySelector("[data-cookie-accept]").addEventListener("click", () => close("accepted"));
+  banner.querySelector("[data-cookie-reject]").addEventListener("click", () => close("rejected"));
+
+  window.requestAnimationFrame(() => banner.classList.add("is-visible"));
+})();
 
 if (navToggle && mainNav) {
   navToggle.addEventListener("click", () => {
