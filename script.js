@@ -32,6 +32,22 @@ const pageTitles = {
   "formacion.html": {
     es: "Formación profesional de limpieza | Radiant Clean",
     en: "Professional cleaning training | Radiant Clean"
+  },
+  "como-trabajo.html": {
+    es: "Cómo trabajo | Radiant Clean",
+    en: "How I work | Radiant Clean"
+  },
+  "aviso-legal.html": {
+    es: "Aviso legal | Radiant Clean",
+    en: "Legal notice | Radiant Clean"
+  },
+  "privacidad.html": {
+    es: "Política de privacidad | Radiant Clean",
+    en: "Privacy policy | Radiant Clean"
+  },
+  "cookies.html": {
+    es: "Política de cookies | Radiant Clean",
+    en: "Cookies policy | Radiant Clean"
   }
 };
 
@@ -95,7 +111,7 @@ const indexTranslations = [
   [".metrics .metric:nth-child(4) strong", "Entrega", "Handover"],
   [".metrics .metric:nth-child(4) p", "Espacios listos para huéspedes, visitas, venta o alquiler.", "Spaces ready for guests, viewings, sale or rental."],
   [".metrics .metric:nth-child(4) .live-extra", "La vivienda queda lista para entrar, enseñar o fotografiar.", "The property is ready to enter, show or photograph."],
-  [".portrait-note span", "Dirección personal", "Personal direction"],
+  [".portrait-note > span", "Dirección personal", "Personal direction"],
   [".founder .section-kicker", "Quién está detrás", "Who is behind it"],
   [".founder h2", "Soy Georgina. Trabajo cerca, con criterio y mucho cariño por los detalles.", "I'm Georgina. I work closely, with judgement and real care for the details."],
   [".founder-copy > p:nth-of-type(2)", "Llevo años cuidando viviendas vacacionales y propiedades que necesitan estar siempre listas. Mi forma de trabajar se basa en la responsabilidad, la organización y la atención al detalle, y en estar yo presente cuando hace falta.", "I have spent years caring for holiday homes and properties that need to be always ready. My way of working is built on responsibility, organisation, attention to detail, and being there myself when it matters."],
@@ -118,6 +134,29 @@ const indexTranslations = [
   [".service-grid .service-card:nth-child(4) h3", "Puesta a punto para venta o alquiler", "Preparation for sale or rental"],
   [".service-grid .service-card:nth-child(4) p", "Limpieza profunda y revisión completa para mejorar la primera impresión en visitas.", "Deep cleaning and complete review to improve the first impression during viewings."],
   [".service-grid .service-card:nth-child(4) .service-link", "Ver servicio", "View service"],
+  [".service-compare .section-kicker", "Comparativa clara", "Clear comparison"],
+  [".service-compare h2", "Qué incluye cada servicio y cuándo encaja mejor.", "What each service includes and when it fits best."],
+  [".compare-heading p", "No todas las propiedades necesitan lo mismo. Esta vista rápida ayuda a elegir el tipo de intervención y evita presupuestos confusos.", "Not every property needs the same thing. This quick view helps choose the right kind of work and avoids confusing quotes."],
+  [".compare-table thead th:nth-child(1)", "Servicio", "Service"],
+  [".compare-table thead th:nth-child(2)", "Ideal para", "Best for"],
+  [".compare-table thead th:nth-child(3)", "Incluye", "Includes"],
+  [".compare-table thead th:nth-child(4)", "Prioridad", "Priority"],
+  [".compare-table tbody tr:nth-child(1) th", "Viviendas vacacionales", "Holiday homes"],
+  [".compare-table tbody tr:nth-child(1) td:nth-child(2)", "Entradas, salidas y mantenimiento recurrente.", "Arrivals, departures and recurring maintenance."],
+  [".compare-table tbody tr:nth-child(1) td:nth-child(3)", "Limpieza, textiles, cocina, baños, terraza y revisión final.", "Cleaning, textiles, kitchen, bathrooms, terrace and final review."],
+  [".compare-table tbody tr:nth-child(1) .compare-pill", "Rotación", "Turnover"],
+  [".compare-table tbody tr:nth-child(2) th", "Complejos turísticos", "Tourist complexes"],
+  [".compare-table tbody tr:nth-child(2) td:nth-child(2)", "Varias unidades con entregas coordinadas.", "Several units with coordinated handovers."],
+  [".compare-table tbody tr:nth-child(2) td:nth-child(3)", "Equipo, calendarios, checklist común y control de incidencias.", "Team, calendars, shared checklist and issue control."],
+  [".compare-table tbody tr:nth-child(2) .compare-pill", "Orden", "Order"],
+  [".compare-table tbody tr:nth-child(3) th", "Post-obra", "Post-construction"],
+  [".compare-table tbody tr:nth-child(3) td:nth-child(2)", "Reformas, polvo fino y vivienda antes de estrenar.", "Renovations, fine dust and homes before first use."],
+  [".compare-table tbody tr:nth-child(3) td:nth-child(3)", "Análisis previo, limpieza por fases, cristales, acabados y detalle.", "Initial assessment, phased cleaning, glass, finishes and details."],
+  [".compare-table tbody tr:nth-child(3) .compare-pill", "Precisión", "Precision"],
+  [".compare-table tbody tr:nth-child(4) th", "Venta o alquiler", "Sale or rental"],
+  [".compare-table tbody tr:nth-child(4) td:nth-child(2)", "Fotos, visitas, entrega de llaves o cambio de inquilino.", "Photos, viewings, key handover or tenant change."],
+  [".compare-table tbody tr:nth-child(4) td:nth-child(3)", "Puesta a punto, primera impresión, orden visual y puntos sensibles.", "Preparation, first impression, visual order and sensitive points."],
+  [".compare-table tbody tr:nth-child(4) .compare-pill", "Presencia", "Presence"],
   [".operations .section-kicker", "La forma de trabajar", "How we work"],
   [".operations h2", "Lo pequeño también importa cuando quieres que alguien se sienta bien al entrar.", "Small details matter when you want someone to feel good the moment they walk in."],
   [".operations-copy > p:nth-of-type(2)", "Cajones, superficies, baños, cocina, textiles, terraza, acabados y pequeños signos de desgaste. El servicio está pensado para que el inmueble se mantenga bonito, funcional y rentable.", "Drawers, surfaces, bathrooms, kitchen, textiles, terrace, finishes and small signs of wear. The service is designed to keep the property beautiful, functional and profitable."],
@@ -170,6 +209,26 @@ const indexTranslations = [
   [".stats .stat-card:nth-child(2) span", "entregas impecables coordinadas en temporada", "impeccable handovers coordinated each season"],
   [".stats .stat-card:nth-child(3) span", "valoración media en las viviendas que acompaño", "average rating in the homes I look after"],
   [".stats .stat-card:nth-child(4) span", "supervisado en persona por Georgina", "supervised in person by Georgina"],
+  [".case-studies .section-kicker", "Casos reales", "Real cases"],
+  [".case-studies h2", "Antes de entregar, la vivienda tiene que contar una historia de cuidado.", "Before handover, the home has to tell a story of care."],
+  [".case-heading p", "He dado más protagonismo visual al resultado: estancias preparadas para fotos, visitas, huéspedes o propietarios, con el checklist aplicado antes de cerrar el servicio.", "I have given the result more visual focus: rooms prepared for photos, viewings, guests or owners, with the checklist applied before closing the service."],
+  [".case-photo-before figcaption", "Antes de revisar", "Before review"],
+  [".case-photo-after figcaption", "Listo para recibir", "Ready to welcome"],
+  [".case-tag", "Caso 01 · Vivienda vacacional", "Case 01 · Holiday home"],
+  [".case-copy h3", "De limpieza correcta a vivienda preparada para entrar.", "From correct cleaning to a home ready to enter."],
+  [".case-copy p", "La diferencia no está solo en que algo esté limpio. Está en la luz, el orden, los textiles, los olores, los puntos de contacto y esa sensación de que alguien lo ha mirado todo antes de entregar.", "The difference is not only that something is clean. It is in the light, order, textiles, scent, touchpoints and that feeling that someone checked everything before handover."],
+  [".case-copy li:nth-child(1)", "Revisión de cocina, baños y textiles.", "Kitchen, bathroom and textile review."],
+  [".case-copy li:nth-child(2)", "Orden visual para fotos y primera llegada.", "Visual order for photos and first arrival."],
+  [".case-copy li:nth-child(3)", "Incidencias visibles comunicadas antes de cerrar.", "Visible issues communicated before closing."],
+  [".case-card:nth-child(1) span", "Vacacional", "Holiday"],
+  [".case-card:nth-child(1) strong", "Terrazas listas para recibir", "Terraces ready to welcome"],
+  [".case-card:nth-child(1) p", "Exterior limpio, mobiliario colocado y sensación de llegada cuidada.", "Clean outdoor space, placed furniture and a cared-for arrival feeling."],
+  [".case-card:nth-child(2) span", "Textiles", "Textiles"],
+  [".case-card:nth-child(2) strong", "Dormitorios con presencia", "Bedrooms with presence"],
+  [".case-card:nth-child(2) p", "Cama, luz y orden pensados para que el descanso entre por los ojos.", "Bed, light and order designed so rest is visible at first glance."],
+  [".case-card:nth-child(3) span", "Post-obra", "Post-construction"],
+  [".case-card:nth-child(3) strong", "Acabados sin polvo fino", "Finishes without fine dust"],
+  [".case-card:nth-child(3) p", "Superficies, esquinas y detalles revisados antes de estrenar.", "Surfaces, corners and details reviewed before first use."],
   [".beforeafter .section-kicker", "Antes / después", "Before / after"],
   [".beforeafter h2", "Misma vivienda, dos formas de prepararla.", "Same home, two ways of preparing it."],
   [".ba-heading p", "A la izquierda, lo que se entrega \"por inercia\": sin mirada, sin criterio. A la derecha, una vivienda preparada con el método Radiant. Mueve el divisor para ver el contraste.", "On the left, what is delivered \"out of habit\": no real eye, no criterion. On the right, a home prepared with the Radiant method. Drag the divider to see the contrast."],
@@ -206,6 +265,12 @@ const indexTranslations = [
   [".training-copy .script-mark", "para equipos y empresas", "for teams and companies"],
   [".training h2", "Enseño la forma de trabajar que en este sector nadie te enseña.", "I teach the way of working that nobody in this sector teaches you."],
   [".training-copy > p:nth-of-type(2)", "El gran problema de la limpieza profesional no son las manos: es la falta de formación. Equipos sin checklist, sin briefing, sin criterio para revisar lo importante.", "The big problem in professional cleaning is not the hands: it is the lack of training. Teams with no checklist, no briefing, no judgement to review what matters."],
+  [".training-highlights article:nth-child(1) strong", "In situ", "On site"],
+  [".training-highlights article:nth-child(1) span", "En vivienda real, con casos reales.", "In a real home, with real cases."],
+  [".training-highlights article:nth-child(2) strong", "Plantillas", "Templates"],
+  [".training-highlights article:nth-child(2) span", "Checklists y briefings listos para usar.", "Ready-to-use checklists and briefings."],
+  [".training-highlights article:nth-child(3) strong", "Seguimiento", "Follow-up"],
+  [".training-highlights article:nth-child(3) span", "Acompañamiento durante las primeras semanas.", "Support during the first weeks."],
   [".training-copy > p:nth-of-type(3)", "Después de años montando sistemas propios, formo a empresas de limpieza, equipos internos de gestores y a quien quiere arrancar su proyecto con cabeza. Te enseño mi metodología, te dejo plantillas reales y te acompaño hasta que el equipo entrega solo, sin que tengas que estar encima.", "After years building my own systems, I train cleaning companies, in-house manager teams and anyone who wants to start their project the right way. I share my methodology, give you real templates and stay close until the team delivers on its own."],
   [".training-bullets li:nth-child(1)", "Para empresas que quieren elevar su estándar.", "For companies that want to raise their standard."],
   [".training-bullets li:nth-child(2)", "Para gestores que necesitan ordenar a su equipo de limpieza.", "For managers who need to organise their cleaning team."],
@@ -224,6 +289,8 @@ const indexTranslations = [
   [".training-steps li:nth-child(4) span", "Cómo controlar la calidad sin tener que repetir el trabajo después.", "How to control quality without having to redo the work afterwards."],
   [".training-steps li:nth-child(5) strong", "Acompañamiento posterior", "Ongoing support"],
   [".training-steps li:nth-child(5) span", "Sigo cerca durante las primeras semanas para que el sistema se quede contigo.", "I stay close for the first weeks so the system truly sticks."],
+  [".training-deliverables span", "Entregables", "Deliverables"],
+  [".training-deliverables strong", "Checklist, briefing, protocolo de revisión y ficha de incidencias.", "Checklist, briefing, review protocol and issue sheet."],
   [".training-quote cite", "— Georgina Cuesta", "— Georgina Cuesta"],
   [".reels .section-kicker", "Reels Radiant Clean", "Radiant Clean Reels"],
   [".reels-heading h2", "Una forma más visual de entender el cuidado real de una propiedad.", "A more visual way to understand real property care."],
@@ -275,8 +342,15 @@ const formacionTranslations = [
   [".audience-card:nth-child(3) h3", "Para quien arranca su proyecto", "For those starting their own project"],
   [".audience-card:nth-child(3) p", "Montar un negocio del sector con cabeza, plantillas reales y la metodología que tarda años en aprenderse trabajando.", "Build a business in the sector the smart way, with real templates and the methodology that takes years to learn on the job."],
   [".formacion-program .section-kicker", "Programa formativo", "Training programme"],
-  [".formacion-program h2", "Cinco bloques, una forma de mirar que se queda contigo.", "Five blocks, one way of looking that stays with you."],
-  [".formacion-program-copy p", "La formación es presencial, en una vivienda real, con tu equipo. Trabajamos juntas en cada módulo y te llevas todo el material en plantillas listas para usar. Después del primer bloque te acompaño a distancia durante las primeras semanas.", "Training is in person, in a real home, with your team. We work together on each module and you take away all the material as ready-to-use templates. After the first block I support you remotely during the first weeks."],
+  [".program-eyebrow", "Presencial · vivienda real · tu equipo", "In person · real home · your team"],
+  [".formacion-presence-card h2", "La formación se aprende mirando una vivienda real.", "Training is learned by looking at a real home."],
+  [".formacion-program-lead", "Trabajo contigo y con tu equipo en una vivienda real: vemos estancias, materiales, orden, briefing y revisión final sin teoría vacía.", "I work with you and your team in a real home: rooms, materials, order, briefing and final review, without empty theory."],
+  [".formacion-flow article:nth-child(1) strong", "Entramos", "We step in"],
+  [".formacion-flow article:nth-child(1) small", "Diagnóstico real del punto de partida.", "A real diagnosis of the starting point."],
+  [".formacion-flow article:nth-child(2) strong", "Practicamos", "We practise"],
+  [".formacion-flow article:nth-child(2) small", "Checklist aplicado estancia por estancia.", "Checklist applied room by room."],
+  [".formacion-flow article:nth-child(3) strong", "Ordenamos", "We organise"],
+  [".formacion-flow article:nth-child(3) small", "Material listo para repetir el sistema.", "Material ready to repeat the system."],
   [".formacion-meta div:nth-child(1) strong", "Modalidad", "Format"],
   [".formacion-meta div:nth-child(1) span", "Presencial in situ + acompañamiento remoto", "On-site + remote follow-up"],
   [".formacion-meta div:nth-child(2) strong", "Duración", "Duration"],
@@ -285,6 +359,9 @@ const formacionTranslations = [
   [".formacion-meta div:nth-child(3) span", "Plantillas, checklists y guion de briefing", "Templates, checklists and briefing scripts"],
   [".formacion-meta div:nth-child(4) strong", "Zona", "Area"],
   [".formacion-meta div:nth-child(4) span", "Costa del Sol · consultar otras zonas", "Costa del Sol · ask about other areas"],
+  [".program-panel-heading > span", "Cinco bloques", "Five blocks"],
+  [".program-panel-heading h3", "Una forma de mirar que se queda contigo.", "One way of looking that stays with you."],
+  [".program-panel-heading p", "Del diagnóstico al seguimiento, cada módulo convierte el criterio de Georgina en una rutina clara para tu equipo.", "From diagnosis to follow-up, each module turns Georgina's judgement into a clear routine for your team."],
   [".formacion-modules li:nth-child(1) strong", "Briefing inicial y diagnóstico", "Initial briefing and diagnosis"],
   [".formacion-modules li:nth-child(1) p", "Conocer el equipo, las viviendas, el nivel real y los puntos donde se está perdiendo calidad.", "Meeting the team, the homes, the real level and the points where quality is slipping."],
   [".formacion-modules li:nth-child(2) strong", "Checklists por tipo de servicio", "Checklists by service type"],
@@ -319,6 +396,58 @@ const formacionTranslations = [
   [".formacion-faq .faq-item:nth-child(5) .faq-body", "Depende del tamaño del equipo y del alcance del programa. No tengo precio cerrado porque cada caso es distinto; tras una llamada de 20 minutos te paso una propuesta clara y sin compromiso.", "It depends on team size and programme scope. I don't have a closed price because every case is different; after a 20-minute call I send you a clear proposal with no commitment."],
   [".detail-cta h2", "Si tu equipo no tiene un sistema, lo construimos juntas.", "If your team has no system, we'll build it together."],
   [".detail-cta .btn", "Reservar llamada con Georgina", "Book a call with Georgina"]
+];
+
+const comoTrabajoTranslations = [
+  [".detail-back", "Volver al inicio", "Back to home"],
+  [".work-hero .eyebrow", "Sistema Radiant", "Radiant System"],
+  [".work-hero h1", "Trabajo con método, mirada y supervisión directa.", "I work with method, attention and direct supervision."],
+  [".work-hero-copy > p:not(.eyebrow)", "No se trata solo de limpiar. Se trata de entender la propiedad, preparar cada intervención, revisar lo que suele pasar desapercibido y entregar un espacio que transmita orden desde el primer paso.", "It is not just about cleaning. It is about understanding the property, preparing every intervention, checking what often goes unnoticed and handing over a space that feels ordered from the first step."],
+  [".work-hero .btn-primary", "Ver el proceso", "View the process"],
+  [".work-hero .btn-secondary", "Ver dossier", "View dossier"],
+  [".work-hero .detail-highlights span:nth-child(1)", "Diagnóstico previo", "Initial diagnosis"],
+  [".work-hero .detail-highlights span:nth-child(2)", "Checklist operativo", "Operational checklist"],
+  [".work-hero .detail-highlights span:nth-child(3)", "Equipo coordinado", "Coordinated team"],
+  [".work-hero .detail-highlights span:nth-child(4)", "Entrega supervisada", "Supervised handover"],
+  [".work-panel-label", "Estándar Radiant", "Radiant standard"],
+  [".work-hero-panel strong", "Antes de dar una vivienda por lista, tiene que pasar por mirada, orden y control.", "Before a home is marked ready, it has to pass through attention, order and control."],
+  [".work-hero-panel li:nth-child(1)", "Estado general revisado.", "General condition checked."],
+  [".work-hero-panel li:nth-child(2)", "Puntos críticos controlados.", "Critical points controlled."],
+  [".work-hero-panel li:nth-child(3)", "Presentación final cuidada.", "Final presentation cared for."],
+  [".work-principle:nth-child(1) h2", "Mirar antes de actuar.", "Look before acting."],
+  [".work-principle:nth-child(1) p", "Primero entiendo el inmueble, su uso, su rotación y sus puntos delicados. Así cada tarea tiene sentido.", "First I understand the property, its use, turnover and delicate points. That way every task has a purpose."],
+  [".work-principle:nth-child(2) h2", "Ordenar antes de correr.", "Organise before rushing."],
+  [".work-principle:nth-child(2) p", "Un buen resultado depende del orden de trabajo: prioridades claras, equipo alineado y tiempos realistas.", "A good result depends on work order: clear priorities, an aligned team and realistic timing."],
+  [".work-principle:nth-child(3) h2", "Supervisar antes de entregar.", "Supervise before handover."],
+  [".work-principle:nth-child(3) p", "El último vistazo marca la diferencia: cocina, baño, textiles, acabados, olor, luz y sensación al entrar.", "The final look makes the difference: kitchen, bathroom, textiles, finishes, scent, light and the feeling when entering."],
+  [".work-system .section-kicker", "Checklist operativo", "Operational checklist"],
+  [".work-system h2", "Lo que no se revisa, se acaba notando.", "What is not checked eventually shows."],
+  [".work-system-copy p", "Por eso trabajo con una lista clara de control. No para hacer el servicio frío, sino para que el cuidado no dependa de la prisa, de la memoria o del día que haya tenido el equipo.", "That is why I work with a clear control list. Not to make the service cold, but so care does not depend on hurry, memory or the kind of day the team has had."],
+  [".work-system .text-link", "Quiero organizar mis propiedades", "I want to organise my properties"],
+  [".work-checksheet .board-header span", "Antes de entregar", "Before handover"],
+  [".work-checksheet .board-header strong", "Checklist vivo", "Living checklist"],
+  [".work-checksheet li:nth-child(1) strong", "Revisión de estancia completa", "Full room review"],
+  [".work-checksheet li:nth-child(1) em", "Dormitorios, salón, zonas de paso y exteriores.", "Bedrooms, living room, passage areas and exteriors."],
+  [".work-checksheet li:nth-child(2) strong", "Cuidado de superficies y acabados", "Care for surfaces and finishes"],
+  [".work-checksheet li:nth-child(2) em", "Materiales, marcas, polvo fino y signos de uso.", "Materials, marks, fine dust and signs of use."],
+  [".work-checksheet li:nth-child(3) strong", "Control de cocina, baño y textiles", "Kitchen, bathroom and textile checks"],
+  [".work-checksheet li:nth-child(3) em", "Los puntos que más influyen en la confianza.", "The points that most influence trust."],
+  [".work-checksheet li:nth-child(4) strong", "Detección de incidencias visibles", "Visible issue detection"],
+  [".work-checksheet li:nth-child(4) em", "Avisos tempranos para evitar sorpresas.", "Early notices to avoid surprises."],
+  [".work-checksheet li:nth-child(5) strong", "Presentación final", "Final presentation"],
+  [".work-checksheet li:nth-child(5) em", "Orden visual antes de huésped, visita, foto o entrega.", "Visual order before guest, viewing, photo or handover."],
+  [".work-process .section-kicker", "Paso a paso", "Step by step"],
+  [".work-process h2", "Un proceso claro, con trato humano de principio a fin.", "A clear process with a human touch from beginning to end."],
+  [".work-supervision .section-kicker", "Supervisión directa", "Direct supervision"],
+  [".work-supervision h2", "El método funciona porque hay alguien mirando de verdad.", "The method works because someone is truly paying attention."],
+  [".work-supervision-copy p", "Mi forma de trabajar no consiste en mandar un equipo y desaparecer. Estoy cerca del proceso, reviso criterios, ajusto lo necesario y mantengo una comunicación clara para que sepas cómo está tu propiedad.", "My way of working is not sending a team and disappearing. I stay close to the process, review criteria, adjust what is needed and keep communication clear so you know how your property is doing."],
+  [".work-supervision li:nth-child(1)", "Comunicación directa y cercana.", "Direct and close communication."],
+  [".work-supervision li:nth-child(2)", "Equipo formado con un estándar común.", "Team trained with a shared standard."],
+  [".work-supervision li:nth-child(3)", "Control final antes de cerrar el servicio.", "Final control before closing the service."],
+  [".detail-related-heading h2", "El método se adapta al tipo de propiedad.", "The method adapts to each type of property."],
+  [".detail-related-heading p", "Cada servicio tiene una prioridad distinta, pero el estándar Radiant se mantiene.", "Each service has a different priority, but the Radiant standard remains."],
+  [".detail-cta h2", "Si quieres delegar sin perder control, empecemos por ordenar el sistema.", "If you want to delegate without losing control, let's start by organising the system."],
+  [".detail-cta .btn", "Hablar con Georgina", "Talk to Georgina"]
 ];
 
 const servicePageTranslations = {
@@ -462,6 +591,7 @@ const servicePageTranslations = {
 const pageTranslations = {
   "index.html": indexTranslations,
   "formacion.html": formacionTranslations,
+  "como-trabajo.html": comoTrabajoTranslations,
   ...servicePageTranslations
 };
 
@@ -475,6 +605,9 @@ const leadingTextTranslations = [
 
 const attributeTranslations = [
   [".language-switcher", "aria-label", "Idioma", "Language"],
+  [".compare-table tbody td:nth-child(2)", "data-label", "Ideal para", "Best for"],
+  [".compare-table tbody td:nth-child(3)", "data-label", "Incluye", "Includes"],
+  [".compare-table tbody td:nth-child(4)", "data-label", "Prioridad", "Priority"],
   [".contact-form input[name='area']", "placeholder", "Fuengirola, Málaga, Costa del Sol", "Fuengirola, Malaga, Costa del Sol"],
   [".contact-form textarea[name='message']", "placeholder", "Necesito limpieza y mantenimiento para...", "I need cleaning and maintenance for..."]
 ];
@@ -841,7 +974,7 @@ trustItems.forEach((item) => {
 });
 
 function activateInteractiveCard(card) {
-  const group = card.closest(".metrics, .operations-board, .method-list, .benefits-grid, .detail-proof, .detail-steps, .detail-check");
+  const group = card.closest(".metrics, .operations-board, .work-checksheet, .method-list, .benefits-grid, .case-grid, .detail-proof, .detail-steps, .detail-check");
   if (group) {
     group.querySelectorAll(".is-active").forEach((entry) => {
       if (entry !== card) entry.classList.remove("is-active");
