@@ -5507,7 +5507,7 @@ address a:focus-visible,
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 860px) {
   .service-compare,
   .case-studies {
     padding: 78px 0;
@@ -7014,7 +7014,8 @@ h3,
   .hero-shell {
     grid-template-columns: minmax(0, 1fr) minmax(470px, 0.76fr);
     gap: clamp(38px, 4vw, 62px);
-    padding-block: 38px 58px;
+    min-height: auto;
+    padding-block: 26px 36px;
   }
 
   .hero h1 {
@@ -7031,7 +7032,7 @@ h3,
   .hero-system-showcase .hero-founder-frame {
     grid-column: 1 / -1;
     grid-row: 1;
-    width: min(100% - 74px, 390px);
+    width: min(100% - 92px, 350px);
     aspect-ratio: 4 / 5;
   }
 
@@ -7041,18 +7042,18 @@ h3,
     align-self: start;
     justify-self: stretch;
     width: auto;
-    margin: -24px 0 0;
-    padding: 15px 17px 14px;
+    margin: -18px 0 0;
+    padding: 12px 15px;
     border-radius: var(--radius);
   }
 
   .hero-system-card .script {
-    font-size: 1.66rem;
+    font-size: 1.48rem;
   }
 
   .hero-system-card-action {
-    margin-top: 10px;
-    padding-top: 9px;
+    margin-top: 7px;
+    padding-top: 7px;
   }
 
   .hero-system-rail {
@@ -7060,7 +7061,7 @@ h3,
     grid-row: 2;
     align-self: start;
     width: auto;
-    margin: -24px 0 0 -1px;
+    margin: -18px 0 0 -1px;
     border-radius: var(--radius);
   }
 
