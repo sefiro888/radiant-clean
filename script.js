@@ -606,12 +606,19 @@ const corporateCommonTranslations = [
 
 const corporatePageTranslations = {
   "index.html": [
-    [".hero .eyebrow", "Radiant Clean · Sistemas de calidad profesional", "Radiant Clean · Professional quality systems"],
-    [".hero h1", "Limpieza profesional. Todo bajo control.", "Professional cleaning. Everything under control."],
-    [".hero-copy", "Ayudamos a propietarios, gestores y empresas a mantener resultados consistentes mediante servicios especializados, protocolos operativos y control de calidad.", "We help owners, managers and companies maintain consistent results through specialist services, operational protocols and quality control."],
-    [".hero .btn-primary", "Solicitar una valoración", "Request an assessment"],
+    [".hero .eyebrow", "Radiant Clean · Limpieza, control y formación", "Radiant Clean · Cleaning, control and training"],
+    [".hero h1", "Sistema profesional de limpieza. La calidad bajo control.", "Professional cleaning system. Quality under control."],
+    [".hero-copy", "El Sistema Radiant une servicios especializados, protocolos operativos y control de calidad para que la excelencia pueda repetirse, medirse y crecer.", "The Radiant System brings together specialist services, operational protocols and quality control so excellence can be repeated, measured and scaled."],
+    [".hero .btn-primary", "Descubrir Sistema Radiant", "Discover the Radiant System"],
+    [".hero .btn-secondary", "Solicitar una valoración", "Request an assessment"],
+    [".hero-trust-pill", "Fundadora · Creadora del sistema", "Founder · System creator"],
+    [".hero-system-kicker", "Metodología propia", "Proprietary methodology"],
     [".hero-signature .script", "Sistema Radiant", "Radiant System"],
     [".hero-signature small", "Procesos definidos · Calidad verificable", "Defined processes · Verifiable quality"],
+    [".hero-system-card-action-label", "Conocer el sistema", "Explore the system"],
+    [".hero-system-rail > span:nth-child(1) small", "áreas conectadas", "connected areas"],
+    [".hero-system-rail > span:nth-child(2) small", "fases de control", "control phases"],
+    [".hero-system-rail > span:nth-child(3) small", "estándar común", "shared standard"],
     [".trust-item:nth-child(5) small", "Estándares y puntos de control", "Standards and control points"],
     [".promise .section-kicker", "La tranquilidad de saber que todo está bajo control", "The peace of mind of knowing everything is under control"],
     [".promise h2", "La calidad no debe depender de una persona. Debe depender de un sistema.", "Quality should not depend on one person. It should depend on a system."],
