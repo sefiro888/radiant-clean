@@ -6985,3 +6985,190 @@ address a:focus-visible,
     font-size: 0.56rem;
   }
 }
+
+/* Responsive polish: stable grids, compact hero and a readable founder story. */
+.section-shell > *,
+.hero-shell > *,
+.founder-grid > *,
+.contact-grid > *,
+.training-grid > *,
+.detail-hero-grid > *,
+.detail-split-grid > *,
+.formacion-program-grid > *,
+.formacion-method-grid > *,
+.work-hero-grid > *,
+.work-system-grid > *,
+.work-supervision-grid > * {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+.portrait-note,
+.hero-trust-pill {
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 1121px) {
+  .hero-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(470px, 0.76fr);
+    gap: clamp(38px, 4vw, 62px);
+    padding-block: 38px 58px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.85rem, 5.1vw, 4.55rem);
+  }
+
+  .hero-system-showcase {
+    grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+    grid-template-rows: auto auto;
+    max-width: 520px;
+    padding-top: 0;
+  }
+
+  .hero-system-showcase .hero-founder-frame {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: min(100% - 74px, 390px);
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-system-card {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    justify-self: stretch;
+    width: auto;
+    margin: -24px 0 0;
+    padding: 15px 17px 14px;
+    border-radius: var(--radius);
+  }
+
+  .hero-system-card .script {
+    font-size: 1.66rem;
+  }
+
+  .hero-system-card-action {
+    margin-top: 10px;
+    padding-top: 9px;
+  }
+
+  .hero-system-rail {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    width: auto;
+    margin: -24px 0 0 -1px;
+    border-radius: var(--radius);
+  }
+
+  .hero-system-rail > span {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    min-height: 57px;
+    padding: 7px 8px;
+    text-align: center;
+  }
+
+  .hero-system-rail strong {
+    font-size: 1.32rem;
+  }
+
+  .hero-system-rail small {
+    font-size: 0.57rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .founder-compact .founder-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .founder-compact .portrait-stack {
+    width: min(100% - 22px, 390px);
+    margin-inline: auto;
+  }
+
+  .founder-compact .founder-copy {
+    max-width: 780px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-shell {
+    gap: 46px;
+    padding: 44px 0 72px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 12vw, 2.8rem);
+    line-height: 1.03;
+  }
+
+  .hero-system-showcase .hero-founder-frame {
+    width: calc(100% - 10px);
+    aspect-ratio: 4 / 4.7;
+  }
+
+  .hero-system-card {
+    margin-top: -18px;
+  }
+
+  .hero-system-rail {
+    margin-top: 10px;
+  }
+
+  .hero-system-rail > span {
+    min-height: 80px;
+  }
+
+  .founder-compact {
+    padding: 68px 0 72px;
+  }
+
+  .founder-compact .founder-grid {
+    gap: 40px;
+  }
+
+  .founder-compact .portrait-stack {
+    width: calc(100% - 18px);
+  }
+
+  .founder-compact .portrait-main {
+    aspect-ratio: 4 / 4.7;
+    object-position: center 48%;
+  }
+
+  .founder-compact .portrait-note {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    padding: 13px 14px;
+  }
+
+  .founder-compact .founder-copy h2 {
+    font-size: clamp(2rem, 10vw, 2.35rem);
+    line-height: 1.08;
+  }
+
+  .founder-compact .founder-copy p:not(.section-kicker) {
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .founder-compact .founder-note {
+    padding: 17px 18px;
+  }
+
+  .founder-marks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 22px;
+  }
+}
