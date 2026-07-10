@@ -7015,7 +7015,7 @@ h3,
     grid-template-columns: minmax(0, 1fr) minmax(470px, 0.76fr);
     gap: clamp(38px, 4vw, 62px);
     min-height: auto;
-    padding-block: 26px 36px;
+    padding-block: 16px 20px;
   }
 
   .hero h1 {
@@ -7032,7 +7032,7 @@ h3,
   .hero-system-showcase .hero-founder-frame {
     grid-column: 1 / -1;
     grid-row: 1;
-    width: min(100% - 92px, 350px);
+    width: min(100% - 102px, 340px);
     aspect-ratio: 4 / 5;
   }
 
