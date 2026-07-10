@@ -7015,7 +7015,7 @@ h3,
     grid-template-columns: minmax(0, 1fr) minmax(470px, 0.76fr);
     gap: clamp(38px, 4vw, 62px);
     min-height: auto;
-    padding-block: 16px 20px;
+    padding-block: 12px;
   }
 
   .hero h1 {
