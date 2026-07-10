@@ -4,6 +4,9 @@ const header = document.querySelector("[data-header]");
 const contactForm = document.querySelector("[data-contact-form]");
 const trustItems = document.querySelectorAll(".trust-item");
 const langButtons = document.querySelectorAll("[data-lang-switch]");
+const originalTranslationHtml = new WeakMap();
+const originalLeadingText = new WeakMap();
+const originalAttributes = new WeakMap();
 
 document.querySelectorAll(".detail-proof article, .detail-steps li, .detail-check li").forEach((item) => {
   item.classList.add("live-card");
@@ -14,8 +17,8 @@ const interactiveCards = document.querySelectorAll(".live-card, .ops-item");
 
 const pageTitles = {
   "index.html": {
-    es: "Radiant Clean | Limpieza profesional en Costa del Sol",
-    en: "Radiant Clean | Professional cleaning in Costa del Sol"
+    es: "Radiant Clean | Limpieza, control operativo y calidad",
+    en: "Radiant Clean | Cleaning, operations and quality control"
   },
   "viviendas-vacacionales.html": {
     es: "Viviendas vacacionales | Radiant Clean",
@@ -30,12 +33,12 @@ const pageTitles = {
     en: "Sale and rental preparation | Radiant Clean"
   },
   "formacion.html": {
-    es: "Formación profesional de limpieza | Radiant Clean",
-    en: "Professional cleaning training | Radiant Clean"
+    es: "Radiant Academy | Formación profesional",
+    en: "Radiant Academy | Professional training"
   },
   "como-trabajo.html": {
-    es: "Cómo trabajo | Radiant Clean",
-    en: "How I work | Radiant Clean"
+    es: "Sistema Radiant | Radiant Clean",
+    en: "Radiant System | Radiant Clean"
   },
   "aviso-legal.html": {
     es: "Aviso legal | Radiant Clean",
@@ -58,7 +61,7 @@ const commonTranslations = [
   [".main-nav a:nth-child(2)", "Viviendas", "Homes"],
   [".main-nav a:nth-child(3)", "Post-obra", "Post-build"],
   [".main-nav a:nth-child(4)", "Venta/alquiler", "Sale/rental"],
-  [".main-nav a:nth-child(5)", "Cómo trabajo", "How I work"],
+  [".main-nav a:nth-child(5)", "Sistema Radiant", "Radiant System"],
   [".main-nav a:nth-child(6)", "Formación", "Training"],
   [".main-nav a:nth-child(7)", "Testimonios", "Testimonials"],
   [".main-nav a:nth-child(8)", "FAQ", "FAQ"],
@@ -67,8 +70,8 @@ const commonTranslations = [
   [".service-switcher a:nth-child(1)", "Viviendas vacacionales", "Holiday homes"],
   [".service-switcher a:nth-child(2)", "Post-obra", "Post-construction"],
   [".service-switcher a:nth-child(3)", "Venta y alquiler", "Sale and rental"],
-  [".site-footer span:first-child", "Radiant Clean · Georgina Cuesta", "Radiant Clean · Georgina Cuesta"],
-  [".site-footer span:last-child", "Limpieza profesional en Málaga y Costa del Sol", "Professional cleaning in Malaga and Costa del Sol"]
+  [".site-footer span:first-child", "Radiant Clean · Sistema profesional de calidad", "Radiant Clean · Professional quality system"],
+  [".site-footer span:last-child", "Limpieza, control operativo y formación · Costa del Sol", "Cleaning, operational control and training · Costa del Sol"]
 ];
 
 const indexTranslations = [
@@ -249,7 +252,7 @@ const indexTranslations = [
   [".testimonial:nth-child(3) figcaption span", "Empresa de limpieza · Málaga", "Cleaning company · Malaga"],
   [".faq .section-kicker", "Preguntas frecuentes", "Frequently asked"],
   [".faq h2", "Lo que casi todo el mundo me pregunta antes de empezar.", "What almost everyone asks me before starting."],
-  [".faq-intro p", "Si tienes una duda concreta que no aparece aquí, escríbeme directamente. Prefiero responderte yo a darte una respuesta automática.", "If you have a specific question that isn't here, write to me directly. I would rather answer you myself than give you an automated reply."],
+  [".faq-intro > p:not(.section-kicker)", "Si tienes una duda concreta que no aparece aquí, escríbeme directamente. Prefiero responderte yo a darte una respuesta automática.", "If you have a specific question that isn't here, write to me directly. I would rather answer you myself than give you an automated reply."],
   [".faq-intro .text-link", "Escribir a Georgina por WhatsApp", "Message Georgina on WhatsApp"],
   [".faq-item:nth-child(1) summary span:first-child", "¿En qué zonas trabajas?", "Where do you work?"],
   [".faq-item:nth-child(1) .faq-body", "Estoy en Fuengirola y cubro toda la Costa del Sol y alrededores: Málaga, Mijas, Benalmádena, Marbella y municipios cercanos. Si tu propiedad está fuera, escríbeme y lo valoramos.", "I'm based in Fuengirola and cover the whole Costa del Sol and surroundings: Malaga, Mijas, Benalmádena, Marbella and nearby towns. If your property is outside, write to me and we'll see."],
@@ -382,7 +385,7 @@ const formacionTranslations = [
   [".formacion-quote figcaption span", "Empresa de limpieza · Málaga", "Cleaning company · Malaga"],
   [".formacion-faq .section-kicker", "Antes de empezar", "Before we start"],
   [".formacion-faq h2", "Lo que la gente me suele preguntar.", "What people usually ask me."],
-  [".formacion-faq .faq-intro p", "Si tu duda no aparece aquí, escríbeme directamente. Prefiero contestarte yo a darte una respuesta automática.", "If your question is not here, write to me directly. I prefer to answer you myself rather than give an automated reply."],
+  [".formacion-faq .faq-intro > p:not(.section-kicker)", "Si tu duda no aparece aquí, escríbeme directamente. Prefiero contestarte yo a darte una respuesta automática.", "If your question is not here, write to me directly. I prefer to answer you myself rather than give an automated reply."],
   [".formacion-faq .faq-intro .text-link", "Escribirme por WhatsApp", "Message me on WhatsApp"],
   [".formacion-faq .faq-item:nth-child(1) summary span:first-child", "¿La formación es 1 a 1 o para equipos completos?", "Is the training 1-to-1 or for full teams?"],
   [".formacion-faq .faq-item:nth-child(1) .faq-body", "Ambas opciones. Trabajo tanto con profesionales individuales que quieren montar su servicio como con equipos completos de empresas y gestoras. El programa se ajusta al tamaño y al punto de partida.", "Both. I work with individual professionals who want to launch their service and with full teams from companies and management firms. The programme adapts to size and starting point."],
@@ -595,6 +598,227 @@ const pageTranslations = {
   ...servicePageTranslations
 };
 
+const corporateCommonTranslations = [
+  [".main-nav a:nth-child(5)", "Sistema Radiant", "Radiant System"],
+  [".site-footer span:first-child", "Radiant Clean · Sistema profesional de calidad", "Radiant Clean · Professional quality system"],
+  [".site-footer span:nth-child(2)", "Limpieza, control operativo y formación · Costa del Sol", "Cleaning, operational control and training · Costa del Sol"]
+];
+
+const corporatePageTranslations = {
+  "index.html": [
+    [".hero .eyebrow", "Radiant Clean · Sistemas de calidad profesional", "Radiant Clean · Professional quality systems"],
+    [".hero h1", "Limpieza profesional. Todo bajo control.", "Professional cleaning. Everything under control."],
+    [".hero-copy", "Ayudamos a propietarios, gestores y empresas a mantener resultados consistentes mediante servicios especializados, protocolos operativos y control de calidad.", "We help owners, managers and companies maintain consistent results through specialist services, operational protocols and quality control."],
+    [".hero .btn-primary", "Solicitar una valoración", "Request an assessment"],
+    [".hero-signature .script", "Sistema Radiant", "Radiant System"],
+    [".hero-signature small", "Procesos definidos · Calidad verificable", "Defined processes · Verifiable quality"],
+    [".trust-item:nth-child(5) small", "Estándares y puntos de control", "Standards and control points"],
+    [".promise .section-kicker", "La tranquilidad de saber que todo está bajo control", "The peace of mind of knowing everything is under control"],
+    [".promise h2", "La calidad no debe depender de una persona. Debe depender de un sistema.", "Quality should not depend on one person. It should depend on a system."],
+    [".promise-copy p:nth-child(1)", "Radiant Clean combina ejecución profesional, procedimientos claros y verificación para que cada propiedad mantenga el nivel acordado, incluso cuando cambian los equipos o aumenta la operación.", "Radiant Clean combines professional execution, clear procedures and verification so every property maintains the agreed standard, even as teams change or operations grow."],
+    [".promise-copy p:nth-child(2)", "El objetivo no es únicamente que una vivienda esté limpia. Es proteger su imagen, anticipar incidencias y asegurar una experiencia consistente para propietarios, huéspedes y visitantes.", "The goal is not merely a clean property. It is to protect its image, anticipate issues and ensure a consistent experience for owners, guests and visitors."],
+    [".metrics .metric:nth-child(3) p", "Profesionales formados para aplicar un mismo estándar de trabajo y calidad.", "Professionals trained to apply the same working and quality standard."],
+    [".founder .section-kicker", "El origen del sistema", "The origin of the system"],
+    [".founder h2", "Georgina Cuesta, la experiencia que dio forma al Sistema Radiant.", "Georgina Cuesta, the experience behind the Radiant System."],
+    [".founder-copy > p:nth-of-type(2)", "Más de 16 años de experiencia en propiedades reales permitieron convertir el conocimiento práctico en una metodología capaz de formar equipos, ordenar procesos y mantener la calidad a medida que la operación crece.", "More than 16 years of experience in real properties turned practical knowledge into a method that can train teams, organise processes and maintain quality as operations grow."],
+    [".founder-copy > p:nth-of-type(3)", "Hoy Radiant Clean traslada ese criterio a un sistema profesional que puede ejecutarse, implantarse y enseñarse.", "Today Radiant Clean translates that expertise into a professional system that can be delivered, implemented and taught."],
+    [".founder-note", "Una metodología creada para que la excelencia permanezca, independientemente de quién realice el servicio.", "A method created so excellence remains consistent, regardless of who performs the service."],
+    [".founder-marks span:nth-child(3)", "Metodología propia", "Proprietary methodology"],
+    [".services .section-heading h2", "Servicios profesionales ejecutados bajo un mismo estándar de calidad.", "Professional services delivered under one shared quality standard."],
+    [".stats .stat-card:nth-child(1) span", "años de experiencia aplicada en propiedades reales", "years of experience applied in real properties"],
+    [".stats .stat-card:nth-child(2) span", "fases conectadas para controlar cada operación", "connected phases to control every operation"],
+    [".stats .stat-card:nth-child(3) span", "áreas que forman el Sistema Radiant", "areas forming the Radiant System"],
+    [".stats .stat-card:nth-child(4) span", "estándar compartido por todo el equipo", "shared standard across the whole team"],
+    [".case-heading p", "Resultados visibles en propiedades preparadas para fotos, visitas, huéspedes o propietarios, con los puntos de control verificados antes de cerrar el servicio.", "Visible results in properties prepared for photos, viewings, guests or owners, with control points verified before the service is closed."],
+    [".testimonials h2", "Clientes que ya confían en el estándar Radiant.", "Clients who already trust the Radiant standard."],
+    [".testimonials-heading p", "Experiencias de propietarios, gestores y equipos que han ganado tranquilidad, orden y resultados consistentes.", "Experiences from owners, managers and teams who have gained peace of mind, order and consistent results."],
+    [".testimonial:nth-child(1) blockquote", "“La diferencia está en el control. Llegan los huéspedes y la vivienda transmite cuidado desde la puerta. Para nosotros es una tranquilidad enorme.”", "“The difference is in the control. Guests arrive and the property feels cared for from the door. It gives us enormous peace of mind.”"],
+    [".testimonial:nth-child(2) blockquote", "“Tenemos varios apartamentos en alta rotación y, desde que aplicamos una coordinación clara, las entregas mantienen el nivel. Las valoraciones lo notan.”", "“We have several high-turnover apartments and, since introducing clear coordination, handovers maintain the standard. The reviews show it.”"],
+    [".testimonial:nth-child(3) blockquote", "“La formación Radiant nos cambió la forma de trabajar. El equipo comparte criterios y ya no tenemos que repetir las mismas instrucciones cada semana.”", "“Radiant training changed the way we work. The team shares the same criteria and we no longer repeat the same instructions every week.”"],
+    [".faq h2", "Lo que conviene saber antes de empezar.", "What you should know before getting started."],
+    [".faq-intro > p:not(.section-kicker)", "Si necesitas valorar una propiedad, implantar procesos o formar a un equipo, Radiant Clean estudiará el punto de partida y propondrá la modalidad adecuada.", "Whether you need a property assessment, process implementation or team training, Radiant Clean will review the starting point and recommend the right option."],
+    [".faq-intro .text-link", "Consultar por WhatsApp", "Ask us on WhatsApp"],
+    [".faq-item:nth-child(1) summary span:first-child", "¿En qué zonas trabaja Radiant Clean?", "Where does Radiant Clean operate?"],
+    [".faq-item:nth-child(1) .faq-body", "Radiant Clean opera desde Fuengirola y cubre la Costa del Sol y alrededores. Para otras zonas se estudia cada proyecto.", "Radiant Clean operates from Fuengirola and covers the Costa del Sol and surrounding areas. Projects in other locations are assessed individually."],
+    [".faq-item:nth-child(2) summary span:first-child", "¿La calidad depende de quién realice el servicio?", "Does quality depend on who performs the service?"],
+    [".faq-item:nth-child(2) .faq-body", "No. El equipo trabaja con procedimientos, criterios y controles compartidos para mantener el estándar independientemente de la persona asignada.", "No. The team works with shared procedures, criteria and controls to maintain the standard regardless of who is assigned."],
+    [".faq-item:nth-child(3) .faq-body", "El proceso comienza con los datos básicos de la propiedad. Después se realiza una valoración y se prepara una propuesta ajustada.", "The process begins with the property's key details. An assessment is then completed and a tailored proposal prepared."],
+    [".faq-item:nth-child(4) .faq-body", "La formación principal es presencial y se realiza en una vivienda real. Se complementa con materiales profesionales y acompañamiento remoto.", "The main training is in person and takes place in a real property. It is complemented by professional materials and remote support."],
+    [".faq-item:nth-child(5) .faq-body", "Las urgencias se valoran según disponibilidad y planificación. En servicios recurrentes se integran en la coordinación operativa siempre que sea posible.", "Urgent requests are assessed according to availability and planning. For recurring services they are integrated into operational coordination whenever possible."],
+    [".training h2", "Radiant Academy convierte la experiencia en criterio compartido.", "Radiant Academy turns experience into shared professional judgement."],
+    [".training-board-head span", "Metodología profesional", "Professional methodology"],
+    [".training-steps li:nth-child(1) span", "Analizamos el equipo, las viviendas y el punto de partida de la operación.", "We assess the team, properties and operational starting point."],
+    [".training-steps li:nth-child(3) span", "El sistema se aplica en una vivienda real con acompañamiento profesional.", "The system is applied in a real property with professional guidance."],
+    [".training-steps li:nth-child(5) span", "El equipo recibe seguimiento durante las primeras semanas de implantación.", "The team receives follow-up support during the first weeks of implementation."],
+    [".contact h2", "Cuéntanos qué necesitas y diseñaremos el siguiente paso.", "Tell us what you need and we will design the next step."],
+    [".contact-copy > p:not(.section-kicker):not(.contact-script)", "Indica el tipo de propiedad o equipo, la zona y cómo está organizada actualmente la operación. Radiant Clean preparará una propuesta adaptada.", "Tell us the type of property or team, the area and how the operation is currently organised. Radiant Clean will prepare a tailored proposal."],
+    [".contact-script", "— Equipo Radiant Clean", "— Radiant Clean team"]
+  ],
+  "formacion.html": [
+    [".detail-hero .eyebrow", "Radiant Academy · Formación profesional", "Radiant Academy · Professional training"],
+    [".detail-hero h1", "Un equipo preparado mantiene el estándar sin improvisar.", "A prepared team maintains the standard without improvising."],
+    [".detail-hero p:not(.eyebrow)", "Radiant Academy transforma experiencia real en procesos de trabajo comprensibles y aplicables para organizar equipos, controlar la calidad y conseguir resultados consistentes.", "Radiant Academy turns real experience into clear, practical working processes that organise teams, control quality and deliver consistent results."],
+    [".formacion-presence-card h2", "El Sistema Radiant se aprende aplicándolo en una vivienda real.", "The Radiant System is learned by applying it in a real property."],
+    [".formacion-program-lead", "La formación combina demostración, práctica y supervisión en un entorno real para trasladar el estándar a la operación diaria.", "Training combines demonstration, practice and supervision in a real setting so the standard can be applied to daily operations."],
+    [".program-panel-heading p", "Del diagnóstico al seguimiento, cada bloque convierte los principios del Sistema Radiant en una rutina clara para el equipo.", "From diagnosis to follow-up, every block turns the Radiant System principles into a clear team routine."],
+    [".formacion-modules li:nth-child(5) p", "El seguimiento inicial ayuda a resolver dudas, consolidar criterios y adaptar la implantación.", "Initial follow-up helps resolve questions, consolidate criteria and adapt the implementation."],
+    [".formacion-method .section-kicker", "Metodología Radiant", "Radiant methodology"],
+    [".formacion-method h2", "La formación convierte el conocimiento en un sistema sostenible.", "Training turns knowledge into a sustainable system."],
+    [".formacion-method-copy p:nth-of-type(2)", "El Sistema Radiant nace de más de una década de experiencia en propiedades reales, coordinación de equipos y control de calidad.", "The Radiant System grew from more than a decade of experience in real properties, team coordination and quality control."],
+    [".formacion-method-copy p:nth-of-type(3)", "El programa se adapta al punto de partida de cada profesional o empresa para dejar una estructura que pueda aplicarse, supervisarse y mejorar.", "The programme adapts to each professional or company's starting point, leaving a structure that can be applied, supervised and improved."],
+    [".formacion-quote blockquote", "“La formación Radiant nos cambió la forma de trabajar. Antes corregíamos a diario; ahora el equipo comparte criterios y recuperamos tiempo para hacer crecer el negocio.”", "“Radiant training changed the way we work. We used to correct daily; now the team shares the same criteria and we have regained time to grow the business.”"],
+    [".formacion-faq h2", "Lo que conviene saber antes de formarse.", "What you should know before training."],
+    [".formacion-faq .faq-intro > p:not(.section-kicker)", "Radiant Academy estudia el tamaño del equipo, el tipo de operación y el nivel de partida para adaptar el programa.", "Radiant Academy reviews the team size, type of operation and starting level to tailor the programme."],
+    [".formacion-faq .faq-intro .text-link", "Consultar por WhatsApp", "Ask us on WhatsApp"],
+    [".formacion-faq .faq-item:nth-child(1) .faq-body", "Ambas opciones. El programa se adapta tanto a profesionales individuales como a equipos completos de empresas y gestoras.", "Both. The programme adapts to individual professionals as well as complete company and management teams."],
+    [".formacion-faq .faq-item:nth-child(3) .faq-body", "Sí. El acompañamiento inicial permite resolver casos reales, consolidar criterios y ajustar la implantación.", "Yes. Initial support helps resolve real cases, consolidate criteria and adjust the implementation."],
+    [".formacion-faq .faq-item:nth-child(4) .faq-body", "Sí, se valora cada proyecto según el desplazamiento, el equipo y la disponibilidad de una vivienda real para las prácticas.", "Yes. Each project is assessed according to travel, team size and the availability of a real property for practice."],
+    [".formacion-faq .faq-item:nth-child(5) .faq-body", "Depende del tamaño del equipo y del alcance. Tras una primera conversación, Radiant Clean prepara una propuesta clara y sin compromiso.", "It depends on team size and scope. After an initial conversation, Radiant Clean prepares a clear proposal with no commitment."],
+    [".detail-cta h2", "Convierte la experiencia de tu equipo en un estándar que pueda mantenerse.", "Turn your team's experience into a standard that can be maintained."],
+    [".detail-cta .btn", "Solicitar información", "Request information"]
+  ],
+  "como-trabajo.html": [
+    [".work-hero .eyebrow", "Metodología propia de Radiant Clean", "Radiant Clean proprietary methodology"],
+    [".work-hero h1", "La calidad no depende de una persona. Depende de un sistema.", "Quality does not depend on one person. It depends on a system."],
+    [".work-hero-copy > p:not(.eyebrow)", "El Sistema Radiant organiza la limpieza, el control operativo y la gestión de calidad para conseguir resultados consistentes, medibles y replicables.", "The Radiant System organises cleaning, operational control and quality management to achieve consistent, measurable and repeatable results."],
+    [".work-hero .detail-highlights span:nth-child(1)", "Procesos definidos", "Defined processes"],
+    [".work-hero .detail-highlights span:nth-child(2)", "Control verificable", "Verifiable control"],
+    [".work-hero .detail-highlights span:nth-child(3)", "Equipos alineados", "Aligned teams"],
+    [".work-hero .detail-highlights span:nth-child(4)", "Mejora continua", "Continuous improvement"],
+    [".work-panel-label", "Promesa Radiant", "Radiant promise"],
+    [".work-hero-panel strong", "La misma excelencia, independientemente de quién realice el servicio.", "The same excellence, regardless of who performs the service."],
+    [".work-hero-panel li:nth-child(1)", "Estándares claros para cada propiedad.", "Clear standards for every property."],
+    [".work-hero-panel li:nth-child(2)", "Responsabilidades y controles definidos.", "Defined responsibilities and controls."],
+    [".work-hero-panel li:nth-child(3)", "Resultados que pueden verificarse.", "Results that can be verified."],
+    [".work-principle:nth-child(1) h2", "Definir el estándar.", "Define the standard."],
+    [".work-principle:nth-child(1) p", "Cada propiedad necesita criterios claros de presentación, higiene, orden y experiencia antes de comenzar.", "Every property needs clear presentation, hygiene, order and experience criteria before work begins."],
+    [".work-principle:nth-child(2) h2", "Organizar la operación.", "Organise the operation."],
+    [".work-principle:nth-child(2) p", "Tareas, prioridades, tiempos y responsabilidades se integran en un procedimiento comprensible para todo el equipo.", "Tasks, priorities, timings and responsibilities are integrated into a procedure the whole team can understand."],
+    [".work-principle:nth-child(3) h2", "Verificar y mejorar.", "Verify and improve."],
+    [".work-principle:nth-child(3) p", "Los puntos críticos se controlan, las incidencias se registran y el proceso evoluciona con cada resultado.", "Critical points are checked, issues are recorded and the process evolves with each result."],
+    [".radiant-pillars .section-kicker", "Ocho áreas conectadas", "Eight connected areas"],
+    [".radiant-pillars-heading h2", "Mucho más que limpieza: una estructura completa de calidad.", "Much more than cleaning: a complete quality structure."],
+    [".radiant-pillars-heading > p:last-child", "El sistema reúne las áreas necesarias para ordenar una operación, formar al equipo, controlar el resultado y proteger cada propiedad a largo plazo.", "The system brings together the areas needed to organise operations, train teams, control results and protect each property over time."],
+    [".radiant-pillar:nth-child(1) p", "Define la experiencia, la presentación y el estándar que debe transmitir cada propiedad.", "Defines the experience, presentation and standard every property should convey."],
+    [".radiant-pillar:nth-child(2) p", "Convierte las prioridades de cada inmueble en procedimientos operativos claros.", "Turns each property's priorities into clear operational procedures."],
+    [".radiant-pillar:nth-child(3) p", "Forma profesionales y equipos para trabajar bajo un mismo criterio de calidad.", "Trains professionals and teams to work under one shared quality criterion."],
+    [".radiant-pillar:nth-child(4) p", "Incorpora verificaciones, seguimiento y trazabilidad para supervisar cada servicio.", "Adds checks, follow-up and traceability to supervise every service."],
+    [".radiant-pillar:nth-child(5) p", "Integra prevención y conservación para reducir deterioros y costes futuros.", "Integrates prevention and care to reduce deterioration and future costs."],
+    [".radiant-pillar:nth-child(6) p", "Organiza inventario, reposiciones y consumibles antes de cada llegada.", "Organises inventory, replacements and consumables before every arrival."],
+    [".radiant-pillar:nth-child(7) p", "Evalúa resultados y detecta oportunidades de mejora de forma periódica.", "Evaluates results and identifies improvement opportunities periodically."],
+    [".radiant-pillar:nth-child(8) p", "Desarrolla herramientas para conectar equipos, incidencias y documentación operativa.", "Develops tools to connect teams, issues and operational documentation."],
+    [".work-process .section-kicker", "Cómo se implanta", "How it is implemented"],
+    [".work-process h2", "Seis fases para convertir un estándar en una operación controlable.", "Six phases to turn a standard into a controllable operation."],
+    [".work-process-list li:nth-child(1) strong", "Evaluación inicial", "Initial assessment"],
+    [".work-process-list li:nth-child(1) > span:not(.method-icon)", "Necesidades, uso, nivel de exigencia y puntos críticos de la propiedad.", "Property needs, use, required standard and critical points."],
+    [".work-process-list li:nth-child(2) strong", "Diseño del protocolo", "Protocol design"],
+    [".work-process-list li:nth-child(2) > span:not(.method-icon)", "Tareas, prioridades, tiempos y criterios de calidad adaptados al inmueble.", "Tasks, priorities, timings and quality criteria adapted to the property."],
+    [".work-process-list li:nth-child(3) strong", "Ejecución estandarizada", "Standardised execution"],
+    [".work-process-list li:nth-child(3) > span:not(.method-icon)", "El equipo aplica procedimientos comunes para reducir errores y variaciones.", "The team applies shared procedures to reduce errors and variations."],
+    [".work-process-list li:nth-child(4) strong", "Verificación de calidad", "Quality verification"],
+    [".work-process-list li:nth-child(4) > span:not(.method-icon)", "Los puntos críticos se revisan antes de cerrar y entregar el servicio.", "Critical points are checked before the service is closed and handed over."],
+    [".work-process-list li:nth-child(5) strong", "Gestión de incidencias", "Issue management"],
+    [".work-process-list li:nth-child(5) > span:not(.method-icon)", "Las anomalías se registran, comunican y resuelven de forma estructurada.", "Issues are recorded, communicated and resolved in a structured way."],
+    [".work-process-list li:nth-child(6) strong", "Mejora continua", "Continuous improvement"],
+    [".work-process-list li:nth-child(6) > span:not(.method-icon)", "Los resultados permiten revisar y optimizar periódicamente cada procedimiento.", "Results make it possible to review and optimise each procedure periodically."],
+    [".work-supervision .section-kicker", "Un sistema diseñado para crecer", "A system designed to grow"],
+    [".work-supervision h2", "Más propiedades y más equipo, sin perder el estándar.", "More properties and a larger team, without losing the standard."],
+    [".work-supervision-copy p", "Radiant Clean implanta una estructura operativa que permite supervisar el servicio sin estar presente en cada intervención.", "Radiant Clean implements an operational structure that makes it possible to supervise the service without being present at every intervention."],
+    [".work-supervision li:nth-child(1)", "Protocolos y responsabilidades definidos.", "Defined protocols and responsibilities."],
+    [".work-supervision li:nth-child(2)", "Seguimiento de resultados e incidencias.", "Tracking of results and issues."],
+    [".work-supervision li:nth-child(3)", "Formación y optimización continuas.", "Continuous training and optimisation."],
+    [".detail-related-heading h2", "Tres maneras de trabajar con Radiant Clean.", "Three ways to work with Radiant Clean."],
+    [".detail-related-heading p", "El sistema puede ejecutarse, implantarse o enseñarse según las necesidades de cada cliente.", "The system can be delivered, implemented or taught according to each client's needs."],
+    [".related-card:nth-child(1) .related-tag", "Servicio profesional", "Professional service"],
+    [".related-card:nth-child(1) strong", "Nos ocupamos de la operación", "We manage the operation"],
+    [".related-card:nth-child(1) p", "Limpieza, puesta a punto, control y entrega de propiedades bajo el estándar Radiant.", "Cleaning, preparation, control and property handover under the Radiant standard."],
+    [".related-card:nth-child(2) .related-tag", "Implantación", "Implementation"],
+    [".related-card:nth-child(2) strong", "Ordenamos tu sistema", "We organise your system"],
+    [".related-card:nth-child(2) p", "Protocolos, controles y seguimiento para propietarios, gestores y empresas.", "Protocols, controls and follow-up for owners, managers and companies."],
+    [".related-card:nth-child(3) .related-tag", "Radiant Academy", "Radiant Academy"],
+    [".related-card:nth-child(3) strong", "Formamos a tu equipo", "We train your team"],
+    [".related-card:nth-child(3) p", "Programa práctico para aplicar un mismo estándar y desarrollar autonomía operativa.", "Practical training to apply one standard and build operational autonomy."],
+    [".detail-cta h2", "Descubre qué modalidad del Sistema Radiant encaja con tu operación.", "Discover which Radiant System option fits your operation."],
+    [".detail-cta .btn", "Solicitar una valoración", "Request an assessment"]
+  ],
+  "viviendas-vacacionales.html": [
+    [".detail-hero p:not(.eyebrow)", "Radiant Clean coordina la limpieza, la revisión y el mantenimiento para mantener el mismo nivel temporada tras temporada.", "Radiant Clean coordinates cleaning, checks and maintenance to maintain the same standard season after season."],
+    [".detail-hero .btn-primary", "Solicitar valoración", "Request an assessment"],
+    [".detail-highlights span:nth-child(3)", "Equipo bajo un estándar común", "Team working to one standard"],
+    [".detail-copy p:nth-of-type(2)", "El servicio no termina con la limpieza: también permite detectar deterioros, reposiciones e incidencias antes de la siguiente entrada.", "The service does not end with cleaning: it also identifies deterioration, replacements and issues before the next arrival."],
+    [".detail-copy p:nth-of-type(3)", "Radiant Clean coordina calendarios, prioridades y puntos de control para que cada entrega llegue a tiempo y con un estándar homogéneo.", "Radiant Clean coordinates calendars, priorities and control points so every handover is on time and consistent."],
+    [".detail-includes-copy p", "Cada entrada sigue un alcance claro y puntos de control definidos para que el propietario o gestor sepa qué esperar.", "Every arrival follows a clear scope and defined control points so the owner or manager knows what to expect."],
+    [".detail-testimonial blockquote", "“Desde que trabajamos con Radiant Clean no tenemos que mirar el móvil entre entrada y entrada. Los huéspedes y las valoraciones lo notan.”", "“Since working with Radiant Clean, we no longer need to check our phones between arrivals. Guests and reviews notice the difference.”"],
+    [".detail-faq .section-kicker", "Antes de empezar", "Before getting started"],
+    [".detail-faq h2", "Dudas frecuentes de propietarios.", "Frequently asked questions from owners."],
+    [".detail-faq .faq-intro > p:not(.section-kicker)", "Radiant Clean revisará contigo la propiedad, la rotación y las prioridades.", "Radiant Clean will review the property, turnover and priorities with you."],
+    [".detail-faq .faq-intro .text-link", "Consultar por WhatsApp", "Ask us on WhatsApp"],
+    [".detail-faq .faq-item:nth-child(1) summary span:first-child", "¿Cómo se gestionan las llaves y los accesos?", "How are keys and access managed?"],
+    [".detail-faq .faq-item:nth-child(1) .faq-body", "El servicio puede coordinarse mediante cajas de seguridad, cerraduras inteligentes o entrega directa.", "The service can be coordinated through lockboxes, smart locks or direct key handover."],
+    [".detail-faq .faq-item:nth-child(2) summary span:first-child", "¿Gestionáis consumibles y lencería?", "Do you manage consumables and linen?"],
+    [".detail-faq .faq-item:nth-child(2) .faq-body", "La reposición de básicos y la rotación de textiles pueden integrarse en el servicio o con el proveedor habitual.", "Basic supplies and textile rotation can be integrated into the service or coordinated with the usual provider."],
+    [".detail-faq .faq-item:nth-child(3) summary span:first-child", "¿Atendéis cambios de huésped el mismo día?", "Do you handle same-day guest turnovers?"],
+    [".detail-faq .faq-item:nth-child(3) .faq-body", "Sí. Las salidas y entradas del mismo día se integran en la planificación antes del check-in.", "Yes. Same-day departures and arrivals are integrated into the plan before check-in."],
+    [".detail-faq .faq-item:nth-child(4) summary span:first-child", "¿Qué ocurre si existe una incidencia?", "What happens if there is an issue?"],
+    [".detail-faq .faq-item:nth-child(4) .faq-body", "La incidencia se comunica y documenta para que el propietario o gestor pueda actuar.", "The issue is communicated and documented so the owner or manager can act."],
+    [".related-card:nth-child(1) .related-tag", "Servicio", "Service"],
+    [".related-card:nth-child(1) strong", "Limpieza post-obra", "Post-construction cleaning"],
+    [".related-card:nth-child(1) p", "Para reformas y proyectos que necesitan una vivienda preparada para estrenar.", "For renovations and projects that need a property ready for first use."],
+    [".related-card:nth-child(2) .related-tag", "Servicio", "Service"],
+    [".related-card:nth-child(2) strong", "Puesta a punto para venta o alquiler", "Sale or rental preparation"],
+    [".related-card:nth-child(2) p", "Limpieza profunda y orden visual para visitas y fotografías.", "Deep cleaning and visual order for viewings and photography."],
+    [".related-card:nth-child(3) .related-tag", "Formación", "Training"],
+    [".related-card:nth-child(3) strong", "Formación para tu equipo", "Training for your team"],
+    [".related-card:nth-child(3) p", "Radiant Academy forma equipos para aplicar un estándar común y verificable.", "Radiant Academy trains teams to apply a shared, verifiable standard."],
+    [".detail-cta .btn", "Solicitar una propuesta", "Request a proposal"]
+  ],
+  "post-obra.html": [
+    [".detail-hero h1", "Después de la obra, el espacio vuelve a respirar.", "After the works, the space can breathe again."],
+    [".detail-hero p:not(.eyebrow)", "Una limpieza post-obra profesional es método: Radiant Clean analiza, protege materiales y retira polvo, restos y marcas hasta dejar el inmueble listo.", "Professional post-construction cleaning is about method: Radiant Clean assesses, protects materials and removes dust, residue and marks until the property is ready."],
+    [".detail-copy p:nth-of-type(3)", "Radiant Clean se coordina con el equipo de obra para intervenir en el momento adecuado y preparar el inmueble para su entrega.", "Radiant Clean coordinates with the construction team to intervene at the right time and prepare the property for handover."],
+    [".detail-includes-copy p", "La intervención se organiza por fases para que el acabado de la obra pueda apreciarse desde la entrega.", "The intervention is organised in phases so the quality of the finished work can be seen from handover."],
+    [".detail-testimonial blockquote", "“El resultado fue excelente. La vivienda parecía recién estrenada y todo quedó preparado para la entrega.”", "“The result was excellent. The property looked brand new and everything was ready for handover.”"],
+    [".detail-faq .section-kicker", "Antes de empezar", "Before getting started"],
+    [".detail-faq h2", "Lo que conviene saber sobre una limpieza post-obra.", "What to know about post-construction cleaning."],
+    [".detail-faq .faq-intro > p:not(.section-kicker)", "Los materiales, el estado y el plazo se valoran antes de diseñar la intervención.", "Materials, condition and timing are assessed before the intervention is designed."],
+    [".detail-faq .faq-intro .text-link", "Consultar por WhatsApp", "Ask us on WhatsApp"],
+    [".detail-faq .faq-item:nth-child(1) summary span:first-child", "¿Cuánto tiempo lleva una limpieza post-obra?", "How long does post-construction cleaning take?"],
+    [".detail-faq .faq-item:nth-child(1) .faq-body", "Depende de la superficie, los materiales y el tipo de obra. La valoración define un plazo claro.", "It depends on size, materials and type of work. The assessment defines a clear timeframe."],
+    [".detail-faq .faq-item:nth-child(2) summary span:first-child", "¿Trabajáis sobre suelos delicados?", "Do you work on delicate flooring?"],
+    [".detail-faq .faq-item:nth-child(2) .faq-body", "Sí. Los productos y las técnicas se adaptan al material y se coordinan con el reformista cuando es necesario.", "Yes. Products and techniques are adapted to the material and coordinated with the contractor when necessary."],
+    [".detail-faq .faq-item:nth-child(3) summary span:first-child", "¿Podéis intervenir durante la obra?", "Can you work during the construction phase?"],
+    [".detail-faq .faq-item:nth-child(3) .faq-body", "Sí. Los proyectos grandes pueden incluir una limpieza intermedia y otra final coordinadas con la obra.", "Yes. Large projects can include an intermediate clean and a final clean coordinated with the works."],
+    [".detail-faq .faq-item:nth-child(4) summary span:first-child", "¿Cómo se presupuesta el servicio?", "How is the service quoted?"],
+    [".detail-faq .faq-item:nth-child(4) .faq-body", "El presupuesto se prepara tras la valoración, con alcance y fases definidos antes de empezar.", "The quote is prepared after assessment, with scope and phases defined before work begins."],
+    [".related-card:nth-child(1) p", "Puesta a punto para fotografías, visitas y primeras impresiones.", "Preparation for photography, viewings and first impressions."],
+    [".related-card:nth-child(2) p", "Operación recurrente para mantener el estándar en cada entrada.", "Recurring operations to maintain the standard at every arrival."],
+    [".related-card:nth-child(3) p", "Radiant Academy forma al equipo para aplicar un proceso post-obra consistente.", "Radiant Academy trains the team to apply a consistent post-construction process."],
+    [".detail-cta .btn", "Solicitar valoración", "Request an assessment"]
+  ],
+  "venta-alquiler.html": [
+    [".detail-hero p:not(.eyebrow)", "Radiant Clean prepara cada vivienda para que transmita cuidado desde la primera foto y la primera visita, combinando limpieza profunda, orden visual y revisión completa.", "Radiant Clean prepares each property to convey care from the first photo and viewing, combining deep cleaning, visual order and a complete review."],
+    [".detail-copy p:nth-of-type(3)", "El servicio está dirigido a propietarios e inmobiliarias que necesitan presentar cada inmueble en su mejor versión.", "The service is designed for owners and agencies that need to present every property at its best."],
+    [".detail-includes-copy p", "La preparación combina limpieza y presentación para que cada estancia transmita amplitud, cuidado y confianza visual.", "Preparation combines cleaning and presentation so every room conveys space, care and visual confidence."],
+    [".detail-testimonial blockquote", "“Cuando Radiant Clean prepara una vivienda antes de las fotos, se nota en las visitas y en la percepción del inmueble.”", "“When Radiant Clean prepares a property before photography, it shows in the viewings and in how the property is perceived.”"],
+    [".detail-faq .section-kicker", "Antes de empezar", "Before getting started"],
+    [".detail-faq h2", "Lo que conviene saber antes de una puesta a punto.", "What to know before property preparation."],
+    [".detail-faq .faq-intro > p:not(.section-kicker)", "La fecha de fotografías, visitas o entrega se integra en la planificación desde el inicio.", "Photography, viewing or handover dates are integrated into the plan from the start."],
+    [".detail-faq .faq-intro .text-link", "Consultar por WhatsApp", "Ask us on WhatsApp"],
+    [".detail-faq .faq-item:nth-child(1) summary span:first-child", "¿En cuánto tiempo puede estar lista?", "How quickly can the property be ready?"],
+    [".detail-faq .faq-item:nth-child(1) .faq-body", "El plazo depende del tamaño y el estado. Las fechas cerradas se incorporan a la planificación inicial.", "Timing depends on size and condition. Fixed dates are incorporated into the initial plan."],
+    [".detail-faq .faq-item:nth-child(2) summary span:first-child", "¿Trabajáis con inmobiliarias?", "Do you work with real estate agencies?"],
+    [".detail-faq .faq-item:nth-child(2) .faq-body", "Sí. Se pueden coordinar varias propiedades mediante un calendario y condiciones acordadas.", "Yes. Multiple properties can be coordinated through an agreed calendar and terms."],
+    [".detail-faq .faq-item:nth-child(3) summary span:first-child", "¿Gestionáis la retirada de enseres?", "Do you manage item removal?"],
+    [".detail-faq .faq-item:nth-child(3) .faq-body", "Puede coordinarse dentro de un proyecto conjunto de vaciado, limpieza y revisión.", "It can be coordinated within a combined removal, cleaning and review project."],
+    [".detail-faq .faq-item:nth-child(4) summary span:first-child", "¿Debe estar presente el propietario?", "Does the owner need to be present?"],
+    [".detail-faq .faq-item:nth-child(4) .faq-body", "No. El acceso y la entrega pueden coordinarse sin necesidad de cuadrar agendas.", "No. Access and handover can be coordinated without matching schedules."],
+    [".related-card:nth-child(1) p", "Limpieza por fases para inmuebles recién reformados.", "Phased cleaning for newly renovated properties."],
+    [".related-card:nth-child(2) p", "Operación recurrente para mantener el nivel temporada tras temporada.", "Recurring operations to maintain the standard season after season."],
+    [".related-card:nth-child(3) p", "Radiant Academy forma equipos con un criterio de presentación compartido.", "Radiant Academy trains teams with shared presentation criteria."],
+    [".detail-cta .btn", "Solicitar una propuesta", "Request a proposal"]
+  ]
+};
+
 const leadingTextTranslations = [
   [".contact-form label:nth-child(1)", "Nombre", "Name"],
   [".contact-form label:nth-child(2)", "Tipo de propiedad", "Property type"],
@@ -619,13 +843,21 @@ function currentPageKey() {
 
 function translateText(selector, es, en, lang) {
   document.querySelectorAll(selector).forEach((element) => {
-    element.textContent = lang === "en" ? en : es;
+    if (!originalTranslationHtml.has(element)) originalTranslationHtml.set(element, element.innerHTML);
+    if (lang === "en") {
+      element.textContent = en;
+    } else {
+      element.innerHTML = originalTranslationHtml.get(element);
+    }
   });
 }
 
 function translateAttribute(selector, attr, es, en, lang) {
   document.querySelectorAll(selector).forEach((element) => {
-    element.setAttribute(attr, lang === "en" ? en : es);
+    if (!originalAttributes.has(element)) originalAttributes.set(element, new Map());
+    const attributes = originalAttributes.get(element);
+    if (!attributes.has(attr)) attributes.set(attr, element.getAttribute(attr));
+    element.setAttribute(attr, lang === "en" ? en : attributes.get(attr) || "");
   });
 }
 
@@ -637,10 +869,16 @@ function translateLeadingText(selector, es, en, lang) {
 
     if (!textNode) return;
 
+    if (!originalLeadingText.has(textNode)) originalLeadingText.set(textNode, textNode.textContent);
+    if (lang !== "en") {
+      textNode.textContent = originalLeadingText.get(textNode);
+      return;
+    }
+
     const match = textNode.textContent.match(/^(\s*).*?(\s*)$/s);
     const leading = match ? match[1] : "";
     const trailing = match ? match[2] : "";
-    textNode.textContent = `${leading}${lang === "en" ? en : es}${trailing}`;
+    textNode.textContent = `${leading}${en}${trailing}`;
   });
 }
 
@@ -710,6 +948,8 @@ function applyLanguage(language) {
 
   commonTranslations.forEach(([selector, es, en]) => translateText(selector, es, en, lang));
   (pageTranslations[pageKey] || []).forEach(([selector, es, en]) => translateText(selector, es, en, lang));
+  corporateCommonTranslations.forEach(([selector, es, en]) => translateText(selector, es, en, lang));
+  (corporatePageTranslations[pageKey] || []).forEach(([selector, es, en]) => translateText(selector, es, en, lang));
   leadingTextTranslations.forEach(([selector, es, en]) => translateLeadingText(selector, es, en, lang));
   attributeTranslations.forEach(([selector, attr, es, en]) => translateAttribute(selector, attr, es, en, lang));
 
@@ -853,7 +1093,7 @@ if (contactForm) {
     const isEnglish = document.documentElement.lang === "en";
 
     const text = [
-      isEnglish ? `Hello Georgina, my name is ${name}.` : `Hola Georgina, soy ${name}.`,
+      isEnglish ? `Hello, my name is ${name}.` : `Hola, soy ${name}.`,
       property ? (isEnglish ? `Property type: ${property}.` : `Tipo de propiedad: ${property}.`) : "",
       area ? (isEnglish ? `Area: ${area}.` : `Zona: ${area}.`) : "",
       message ? (isEnglish ? `Message: ${message}` : `Mensaje: ${message}`) : isEnglish ? "I would like to receive information about Radiant Clean." : "Quiero recibir información sobre Radiant Clean."
