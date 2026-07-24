@@ -4259,8 +4259,10 @@ textarea {
   position: relative;
   display: grid;
   gap: 14px;
+  align-content: start;
   margin: 0;
-  padding: 32px 28px;
+  min-height: 320px;
+  padding: 30px 28px 28px;
   background: var(--white);
   border: 1px solid rgba(127, 182, 171, 0.28);
   border-radius: var(--radius-lg);
@@ -4285,23 +4287,45 @@ textarea {
   opacity: 0.7;
 }
 
+.testimonial-badge {
+  position: relative;
+  z-index: 1;
+  justify-self: start;
+  padding: 7px 10px;
+  border: 1px solid rgba(127, 182, 171, 0.42);
+  border-radius: 999px;
+  background: rgba(255, 250, 241, 0.86);
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .testimonial .stars {
+  position: relative;
+  z-index: 1;
   color: #d8a531;
   font-size: 1.05rem;
   letter-spacing: 0.18em;
 }
 
 .testimonial blockquote {
+  position: relative;
+  z-index: 1;
   margin: 0;
   color: var(--navy-deep);
   font-family: var(--serif);
-  font-size: 1.18rem;
+  font-size: 1.12rem;
   line-height: 1.45;
   font-style: italic;
   font-weight: 500;
 }
 
 .testimonial figcaption {
+  position: relative;
+  z-index: 1;
+  align-self: end;
   display: grid;
   gap: 2px;
   padding-top: 14px;
@@ -6188,6 +6212,7 @@ address a:focus-visible,
   }
 
   .testimonial {
+    min-height: auto;
     padding: 26px 22px;
   }
 
